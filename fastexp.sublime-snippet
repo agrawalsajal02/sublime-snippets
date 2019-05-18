@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+ll fastexp(ll a,ll n){
+    if(n==0){
+        return 1;
+    }
+    ll r=fastexp(a,n/2);
+    if(n%2==0){
+        return (r*r);
+    }
+    else{
+        return (r*a*r);
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>fastexp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

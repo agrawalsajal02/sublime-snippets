@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+    ll t;
+    cin>>t;
+    for(ll i=0;i<n;i++){
+ll n;
+cin>>n;ll a[n];
+for(ll i=0;i<n;i++){
+    cin>>a[i];
+}
+
+    }
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>start</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

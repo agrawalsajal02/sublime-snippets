@@ -1,0 +1,39 @@
+<snippet>
+    <content><![CDATA[
+ll gcd(ll a,ll b){
+    if(b==0){
+                   return a;}
+    return (gcd(b,a%b));}
+ll x,y,gcdd;
+void extendedEuclidMethod(ll a,ll b){
+     //base case
+    if(b==0){
+        x=1;
+        y=0;
+        gcdd=a;
+        return; 
+    }//recursive case
+    extendedEuclidMethod(b,a%b);
+    ll cx=y;
+    ll cy=x-(a/b)*y;
+    x=cx;
+    y=cy;
+//cout<<cx<<","<<cy<<endl;
+    /*can do this also
+    ll z=y;
+    y=x-(a/b)y;
+    x=z;*/}
+ll Multiplicative_Modulo_inverse(ll a,int m){
+    if(gcd(a,m)!=1){
+        cout<<" Multiplicative-Modulo_inverse NOT possible "<<endl;
+        return NULL;   }
+    extendedEuclidMethod(a,m);
+    //why return x+m)%m because only return x can make the ans negative , but we want only positive ans , remember we always addd m then %m to change the value to positive 
+    return ((x+m)%m);
+}
+        ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>multiplicativemoduloinverse</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

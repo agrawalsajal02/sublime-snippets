@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CopyWithLineNumbersReloaded",
+		"Extract Sublime Package",
+		"Package Control",
+		"PackageResourceViewer",
+		"SublimeAStyleFormatter",
+		"Terminal",
+		"WakaTime"
+	]
+}

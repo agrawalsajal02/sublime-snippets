@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+        ll finddivisorsum(int a){
+    ll sum=0;
+    for(ll i=1;i*i<=a;i++){
+        if(a%i==0){
+            sum=sum+i;
+            if(a/i!=i)
+            sum=sum+a/i;
+        }
+    }
+    sum=sum-a;//proper divisor
+    return sum;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>divisors</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

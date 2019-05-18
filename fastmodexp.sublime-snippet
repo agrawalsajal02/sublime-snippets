@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+ll fastmodexp(ll x,ll y){
+    if(y==0){
+        return 1;
+    }
+    ll r=(fastmodexp(x,y/2)%MAX);
+    if(y%2==0){
+        return ((r*r)%MAX);
+    }
+    else{
+        return ((r*x*r)%MAX);
+    }
+}
+        ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>fastmodexp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
