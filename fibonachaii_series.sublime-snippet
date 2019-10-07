@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+fibonachaii series
+1)you are given a no n. you can make step size of odd uptu n . find out total number of ways to reach n 1 1 3  ,  3 1 1 is different 
+        ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fibonachaii_series</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

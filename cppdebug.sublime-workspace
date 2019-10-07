@@ -1,0 +1,1549 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"en",
+				"endl\tendl"
+			],
+			[
+				"ba",
+				"backtrackit"
+			],
+			[
+				"id",
+				"id-16(sudokosolver)\tid-16(sudokosolver)"
+			],
+			[
+				"bac",
+				"backtracking-4(hamiltonion_path)\tbacktracking-4(hamiltonion_path)"
+			],
+			[
+				"dp",
+				"dp-35(travelling_salesman_with_dp)\tdp-35(travelling_salesman_with_dp)"
+			],
+			[
+				"ma",
+				"mask"
+			],
+			[
+				"grap",
+				"graph-clear\tgraph-clear"
+			],
+			[
+				"mila",
+				"milakyanayastate"
+			],
+			[
+				"tu",
+				"true"
+			],
+			[
+				"vi",
+				"visited"
+			],
+			[
+				"m",
+				"m_color"
+			],
+			[
+				"graph",
+				"graph-clear\tgraph-clear"
+			],
+			[
+				"fas",
+				"fastinput\tfast"
+			],
+			[
+				"bas",
+				"basics\tbasics"
+			],
+			[
+				"con",
+				"concept-1(string_to_num)\tconcept-1(string_to_num)"
+			],
+			[
+				"gra",
+				"graph-11(dSA_by_rank_path_compression)\tgraph-11(dSA_by_rank_path_compression)"
+			],
+			[
+				"mod",
+				"multiplicativemoduloinverse\tmultiplicativemoduloinverse"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"fi",
+				"first"
+			],
+			[
+				"as",
+				"ans2"
+			],
+			[
+				"a",
+				"ans"
+			],
+			[
+				"au",
+				"aux"
+			],
+			[
+				"psh",
+				"push_back"
+			],
+			[
+				"di",
+				"dist"
+			],
+			[
+				"seg",
+				"seg_tree(query_lazy)\tseg_tree(query_lazy)"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"fen",
+				"fenwick_tree(bit_range_sum)\tfenwick_tree(bit)"
+			],
+			[
+				"bina",
+				"boring_factorials\tboring_factorials"
+			],
+			[
+				"bi",
+				"binary_search_stl\tbinary_search_stl"
+			],
+			[
+				"pr",
+				"prime_seive_for_find_divisor_of_n(logn)\tprime_seive_for_find_divisor_of_n(logn)"
+			],
+			[
+				"pri",
+				"prime_seive(1 to n generator)\tprime_seive"
+			],
+			[
+				"mul",
+				"multiplicativemoduloinverse\tmultiplicativemoduloinverse"
+			],
+			[
+				"gcd",
+				"gcd2"
+			],
+			[
+				"fastm",
+				"fastmodexp\tfastmodexpwithbitmask"
+			],
+			[
+				"fast",
+				"fastmodexp\tfastmodexp"
+			],
+			[
+				"prie",
+				"priority_queue(max)\tpriority_queue(max)"
+			],
+			[
+				"prime",
+				"prime(rootn_check)\tprime(rootn_check)"
+			],
+			[
+				"sei",
+				"seive2"
+			],
+			[
+				"contn",
+				"continue"
+			],
+			[
+				"str",
+				"strong\tTag"
+			],
+			[
+				"so",
+				"sou_par"
+			],
+			[
+				"new",
+				"newhash"
+			],
+			[
+				"pat",
+				"patlength"
+			],
+			[
+				"re",
+				"recalcultehash"
+			],
+			[
+				"st",
+				"stat"
+			],
+			[
+				"sta",
+				"start\tstart"
+			],
+			[
+				"we",
+				"weight"
+			],
+			[
+				"co",
+				"con"
+			],
+			[
+				"cn",
+				"con"
+			],
+			[
+				"y",
+				"y_root"
+			],
+			[
+				"x",
+				"x_root"
+			],
+			[
+				"ra",
+				"rank_dsa"
+			],
+			[
+				"mo",
+				"mod"
+			],
+			[
+				"grra",
+				"graph-13(PRIMS_ALG)\tgraph-13(PRIMS_ALG)"
+			],
+			[
+				"fin",
+				"fin_min"
+			],
+			[
+				"wei",
+				"wei"
+			],
+			[
+				"weig",
+				"weight"
+			],
+			[
+				"edge",
+				"edgelist"
+			],
+			[
+				"ed",
+				"edgelist"
+			],
+			[
+				"des",
+				"dest"
+			],
+			[
+				"bipa",
+				"bipartite_dfs\tbipartite_dfs"
+			],
+			[
+				"prim",
+				"prime_seive_for_find_divisor_of_n(logn)\tprime_seive_for_find_divisor_of_n(logn)"
+			],
+			[
+				"ta",
+				"trans_dfs"
+			],
+			[
+				"dfs",
+				"dfs\tdfs"
+			],
+			[
+				"tra",
+				"trans"
+			],
+			[
+				"toposo",
+				"toposort"
+			],
+			[
+				"gr",
+				"graph-6(bfs_cycle_check)\tgraph-6(bfs_cycle_check)"
+			],
+			[
+				"stri",
+				"string"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"e",
+				"endl\tendl"
+			],
+			[
+				"bfs",
+				"bfs\tbfs"
+			],
+			[
+				"eul",
+				"euler_graph_print(fluery_algo)\teuler_graph_print(fluery_algo)"
+			],
+			[
+				"fa",
+				"fastinput\tfast"
+			],
+			[
+				"ED",
+				"endl"
+			],
+			[
+				"f",
+				"f\tfor_loop_for_cp"
+			],
+			[
+				"dis",
+				"dis_map"
+			],
+			[
+				"df",
+				"dfs\tdfs"
+			],
+			[
+				"eu",
+				"euler_graph_print(fluery_algo)\teuler_graph_print(fluery_algo)"
+			],
+			[
+				"sa",
+				"seg_tree(update_range)\tseg_tree(update_range)"
+			],
+			[
+				"b",
+				"basics\tbasics"
+			],
+			[
+				"de",
+				"den"
+			],
+			[
+				"edn",
+				"endl\tendl"
+			],
+			[
+				"bf",
+				"bfs_cycle_check\tbfs_cycle_check"
+			],
+			[
+				"end",
+				"endl\tendl"
+			],
+			[
+				"Ed",
+				"endl"
+			],
+			[
+				"is",
+				"isPal"
+			],
+			[
+				"strin",
+				"stringstream"
+			],
+			[
+				"n",
+				"no_of_mat"
+			],
+			[
+				"se",
+				"second"
+			],
+			[
+				"bo",
+				"bottomup"
+			],
+			[
+				"asn",
+				"ans1"
+			],
+			[
+				"Sc",
+				"Scan"
+			],
+			[
+				"pra",
+				"prime-generation_in_range_nsquare\tprime-generation_in_range_nsquare"
+			],
+			[
+				"fo",
+				"for-x\tfor-x"
+			],
+			[
+				"r",
+				"right_MMS"
+			],
+			[
+				"lef",
+				"left_MMS"
+			],
+			[
+				"graph-",
+				"graph-16(bellman-ford-sssp_negative)\tgraph-16(bellman-ford-sssp_negative)"
+			],
+			[
+				"l",
+				"long-long-long-int(128bit)\tlong-long-int"
+			],
+			[
+				"seg_",
+				"seg_tree(query_lazy)\tseg_tree(query_lazy)"
+			],
+			[
+				"qu",
+				"query_lazy"
+			],
+			[
+				"up",
+				"updaterangeLazy"
+			],
+			[
+				"upda",
+				"updaterange"
+			],
+			[
+				"fsa",
+				"fsmall"
+			],
+			[
+				"lc",
+				"lcm\tlcm"
+			],
+			[
+				"lo",
+				"long-long-long-int(128bit)\tlong-long-int"
+			],
+			[
+				"dp-",
+				"dp-13(coin_change_problem-(noofcoin))\tdp-13(coin_change_problem-(noofcoin))"
+			],
+			[
+				"lca",
+				"lca\tlca"
+			],
+			[
+				"long",
+				"long-long-int\tlong-long-int"
+			],
+			[
+				"cu",
+				"coun"
+			],
+			[
+				"push",
+				"push_back"
+			],
+			[
+				"gc",
+				"gcd\tgcd"
+			],
+			[
+				"beg",
+				"begin"
+			],
+			[
+				"mp",
+				"multiplicativemoduloinverse\tmultiplicativemoduloinverse"
+			],
+			[
+				"cr",
+				"currentAug"
+			],
+			[
+				"curr",
+				"currAughPath"
+			],
+			[
+				"cp",
+				"capacity"
+			],
+			[
+				"s",
+				"source"
+			],
+			[
+				"psu",
+				"push_back"
+			],
+			[
+				"End",
+				"endl"
+			],
+			[
+				"be",
+				"bellmanford"
+			],
+			[
+				"node",
+				"nodedistance"
+			],
+			[
+				"su",
+				"subtract"
+			],
+			[
+				"min",
+				"min_Verti"
+			],
+			[
+				"dest",
+				"dest_parent"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"p",
+				"p_cnt"
+			],
+			[
+				"sor",
+				"source"
+			],
+			[
+				"edg",
+				"edges"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "#include<bits/stdc++.h>\nusing namespace std;\n#define ll long long int\nbool canplace(ll mat[][9],ll i,ll j,ll n,ll num){\n    //three cases\n    /*1)not in the same comulm\n      2)not in the same row\n      3)not in the subgrid\n      */\n    for(ll x=0;x<n;x++){\n     //same row check\n  if(mat[i][x]==num){\n    return false; }\n}\n    for(ll x=0;x<n;x++){\n     //same com check\n  if(mat[x][j]==num){\n    return false; }\n}\n//check for the subgrid\nll tt=sqrt(n);\nll w1=(i/tt)*tt;\nll w2=(j/tt)*tt;\nfor(ll x=w1;x<w1+tt;x++){\n for(ll w=w2;w<w2+tt;w++){\n        if(mat[x][w]==num){\n            return false;\n        }\n    }   \n}\nreturn true;\n\n\n\n}\nbool solversudoko(ll mat[][9],ll i,ll j,ll n){\n    //base case\n    //we are also crosees last row\n    if(i==n){\n\n        for(ll x=0;x<n;x++){\n         for(ll w=0;w<n;w++){\n             cout<<mat[x][w]<<\" \";   \n            }\n            cout<<endl;   \n        }\n        cout<<endl;\n       // print(mat);\n        \n        return true;//hame sol mil gya he\n\n    }\n//case for the row end\n   if(j==n){\n    return solversudoko(mat,i+1,0,n);\n   } \nif(mat[i][j]!=0){\n    return solversudoko(mat,i,j+1,n);\n}\n\n\n//re case\n        //we are calling cell by cell and at the end of row we call another row\n\n//rec case\n//fill number with possible options (1..9)\nfor(ll num=1;num<=n;num++){\n    if(canplace(mat,i,j,n,num)){\n       //assume this is correct\n        mat[i][j]=num;\n       bool couldwesolve=solversudoko(mat,i,j+1,n);\n       if(couldwesolve==true){\n        return true;\n       }\n       //if not solve sudoko we backtrack and try different number       \n    mat[i][j]=0;\n    }\n}\n//backtrack here\n//all possible number for i,j is tried , therefore we change the \n//the cell to original i.e 0 and return false to backtrack to find next possible answer\nreturn false;\n\n\n\n\n\n\n}\n\n\n\n\n\nint main(){\nll mat[9][9]={\n   {5,3,0,0,7,0,0,0,0},\n   {6,0,0,1,9,5,0,0,0},\n   {0,9,8,0,0,0,0,6,0},\n   {8,0,0,0,6,0,0,0,3},\n   {4,0,0,8,0,3,0,0,1},\n   {7,0,0,0,2,0,0,0,6},\n   {0,6,0,0,0,0,2,8,0},\n   {0,0,0,4,1,9,0,0,5},\n   {0,0,0,0,8,0,0,7,9}\n};\n//sudoko solver()\nsolversudoko(mat,0,0,9);\n\n\n/*output \n5 3 4 6 7 8 9 1 2 \n6 7 2 1 9 5 3 4 8 \n1 9 8 3 4 2 5 6 7 \n8 5 9 7 6 1 4 2 3 \n4 2 6 8 5 3 7 9 1 \n7 1 3 9 2 4 8 5 6 \n9 6 1 5 3 7 2 8 4 \n2 8 7 4 1 9 6 3 5 \n3 4 5 2 8 6 1 7 9 \n\n*/\n\n}\n",
+			"file": "newcool.cpp",
+			"file_size": 2410,
+			"file_write_time": 132147316312598932,
+			"settings":
+			{
+				"buffer_size": 2284,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nee.cpp",
+			"settings":
+			{
+				"buffer_size": 513,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dp-35(travelling_salesman_with_dp).sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 1210,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<snippet>\n    <content><![CDATA[\nHello, ${1:this} is a ${2:snippet}.\n]]></content>\n    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->\n    <!-- <tabTrigger>hello</tabTrigger> -->\n    <!-- Optional: Set a scope to limit where the snippet will trigger -->\n    <!-- <scope>source.python</scope> -->\n</snippet>\n",
+			"settings":
+			{
+				"buffer_size": 332,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "firstfile.html",
+			"settings":
+			{
+				"buffer_size": 341,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "/*/-----\n\n\n    Written By:- Sajal Agrawal\n          (Have Patience)\n\n/*/\n#include<bits/stdc++.h>\nusing namespace std;\n#pragma GCC target (\"avx2\")\n#pragma GCC optimization (\"O3\")\n#pragma GCC optimization (\"unroll-loops\")\n#define ll long long int\n#define f(i,a,b) for(ll i=a;i<b;i++)\n#define mod 1000000007\n#define fi first\n#define se second\n#define pa pair <ll,ll>\n#define mp make_pair\n#define c(t) cout<<t<<\"\\n\"\n#define pb push_back\n#define endl '\\n'\nll a[10000];\nll bit[10000]={0};\nvoid update(ll i,ll incr,ll n){\nwhile(i<=n){\n    bit[i]+=incr;\n    i=i+(i&(-i));\n}\n}\n\nll query(ll i){\nll sum=0;\nwhile(i>0){\nsum+=bit[i];\n   i=i-(i&(-i));\n}\nreturn sum;\n}\nint main(){\nll n,q;\ncin>>n>>q;\n\nf(i,1,n+1){\ncin>>a[i];\nupdate(i,a[i],n);\n}\nwhile(q--){\n    ll x,y;\n    cin>>x>>y;\n   cout<<query(y)-query(x-1)<<endl;\n}\n\n\n}\n",
+			"file": "myfile.cpp",
+			"file_size": 2017,
+			"file_write_time": 132124142268949393,
+			"settings":
+			{
+				"buffer_size": 809,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cc.cpp",
+			"settings":
+			{
+				"buffer_size": 1078,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dfs_modified.sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 580,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "asas.cpp",
+			"settings":
+			{
+				"buffer_size": 1142,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "practice.cpp",
+			"settings":
+			{
+				"buffer_size": 1152,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "new.cpp",
+			"settings":
+			{
+				"buffer_size": 933,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "input.in",
+			"settings":
+			{
+				"buffer_size": 40,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "output.in",
+			"settings":
+			{
+				"buffer_size": 4,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/c++input.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/c++input.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c++input.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/c++input.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/myCppBuild.sublime-build",
+					""
+				],
+				[
+					"Packages/User/myCppBuild.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/myCppBuild.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 231.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				"pro",
+				"Project: Save As"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: git",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"termina",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"copy wi",
+				"Preferences: Copy With Line Numbers Settings - User"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"waka",
+				"WakaTime: Open Dashboard"
+			],
+			[
+				"wak",
+				"WakaTime: Open Dashboard"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ter",
+				"Extract Sublime Package: Extract all packages"
+			],
+			[
+				"term",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"ww",
+				"Word Wrap: Toggle"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"extra",
+				"Extract Sublime Package: Extract all packages"
+			]
+		],
+		"width": 484.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-5(sudoko).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/joseph.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-5(hamil_with_bitmask).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/practice2.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-4(hamiltonion_path).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-3(m_coloring).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-2(n_queen).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/backtracking-1(rat_in_maze).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp_on_trees-2(diameter_of_the_tree).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp_on_trees-1(max_alternate_coins).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-8(time_compl).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-7(tockenizing_a_string).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/bitmasking-1(unique_numbers-3).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-9(optimal_game_stategy).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/mod.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-17(subset_sum_equal_k).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-16(equal_partition_problem).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-4(Edit_distance).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp_6(longest_comm_subsequence).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-40(dijkstra_full_code).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-14(dijkstra-n2square).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-5(longest_inc_subsequnce).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dfs_order(example_1).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dfs_order(clear).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dfs_order(dfs+segmenttree).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/google chrome.sublime-build",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/stringmatching(n^2).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/rabin_karp_algo.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-20(dijkstra(set_cp)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/start.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/basics.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-30(prims_set_1(elogv)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-31(prims_mst_set_working_code).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-11(dSA_by_rank_path_compression).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph_23(scc_all_compo).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-24(checking_scc_compo).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-15(knapsack(0_1)_bottom_up).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/read.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-10_1(topo_sort_using_bfs(kahn_algo)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dfs_directed_cycle_check.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-8(cycle_check_directed_graph).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/enum.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/aa.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/input.in",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/c++input.sublime-build",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/cc.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-14(count_no_of_stairs(only1_2_ordernotmatter)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/for_loop_for_cp.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/maximum_circles.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/activity_selection.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-7(graph).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-22(bellmanford).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-22(bellman_ford(e(v-1))).(v-1)))",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-21(floyd_warshal).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/asas.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/euler_graph_print(fluery_algo).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/euler_graph_check.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-practice(count_subarray_with_non_decre).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/boring_factorials.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/prime_seive_for_find_divisor_of_n(logn).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/euler_totient_function.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/chinese_remainder_theorem(crt).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-6(string_modulo).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/light_new_car.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/Linear_Diophantine_equations.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/multiplicativemoduloinverse(Exten_euclid).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/mod(constant_time).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/extendedeuclidmethod.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/stl(hotel_visit).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/functors.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/stl(Birthday_paradox).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-5(stl_concepts).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/factorial(Big_greater_than_20).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/priority_queue(min_pq).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/priority_queue(max).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/newcool.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/sqrt_logn.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fibonachaii_series.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-ex(hackerblock_vacation).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/prime_seive_theory.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/prime-generation_in_range_nsquare.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/prime(rootn_check).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/matrix_chain_multiplication.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/prime_seive.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/new.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/aa",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/dp-13(coin_change_problem-(noofcoin)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fast_int_input.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/bigint.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/tuple.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/max_subarray_sum(kadane_algo(o(n))).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/max_subarr_sum(using_d_and_c).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/binary_search(ex-1).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/binary_search(search_in_sorted_array).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/binary_search(last_occurance).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/binary_search(lower_bound).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/myfile.cpp",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-20(bellman_ford).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/trie.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-3(string_sentence_input).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fenwick_tree(range_update_point_query).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/binary_search_stl.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fenwick_tree(dperm(codechef)).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fenwick_tree(inversion_count).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/cppdebug.sublime-project",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fenwick_tree(bit).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/fedwick_tree(prefix_max).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree(update_range_lazy).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree(query_lazy).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/nearest_power_2.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-4(data_types).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-2(diff_btw_segtree_and_sqrtdecmop).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree_size.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree(update_node).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree(update_range).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/sed_tree(build).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/seg_tree(query).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/segmenttree_full_code.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/bfs(2d-mini-knight-move).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/concept-1(string_to_num).sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/lca_problem-1.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/LCA_SPOJ_PRO.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/lca.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-clear.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/long-long-int.sublime-snippet",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/bfs",
+		"/C/Users/Dell Indpiron/Desktop/cpp-toolkit-master/cpp-toolkit-master/Sublime_1326/Data/Packages/User/graph-16(bellman-ford-sssp_negative).sublime-snippet"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 968.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"float",
+			"6521",
+			"2934894 | 2937334\n",
+			"finnd",
+			"}\n",
+			"1",
+			"PRVasFSaDAflAa",
+			"PRuvetSTAaYA",
+			"4328 407",
+			"vvvovvv",
+			")/])){",
+			"1",
+			"rr2",
+			"4",
+			"1",
+			"#include<bits/stdc++.h>\nusing namespace std;\n#define ll long long int\nint main(){\nll h,q;cin>>h>>q;\nchar in[h][q];\nfor(ll x=0;x<h;x++){\n for(ll w=0;w<q;w++){\n     cin>>in[x][w];   \n    }   \n}\n\nll flag=0;\nll le=-1,re=-1,up=-1,dw=-1;ll cn=-1;\nfor(ll x=0;x<h;x++){\n ll w=0;\n for(w=0;w<q;w++){\n    if((le!=-1||re!=-1||up!=-1||dw!=-1||cn!=-1)&&(in[x][w]=='*')){\n        flag=1;\n    //cout<<\" h1\"<<endl;\n        break;\n    }\n     if(in[x][w]=='*'){\n        if(in[x+1][w]!='*'){\n            flag=1;\n        }\n        else{\n            ll lr=-1;\n           \n            if(w-1<0||w+1>=q){\n                flag=1;\n               // cout<<\" h3\"<<endl;\n                break;\n            }\n            in[x][w]='.';\n            up=w;\n        for(ll y=x+1;y<h;y++){\n           dw=y;\n            in[y][w]='.';\n          if((in[y][w+1]=='*')&&(in[y][w-1]!='*')){\n         flag=1;break;\n          }\nif((in[y][w+1]!='*')&&(in[y][w-1]=='*')){\n     flag=1;break;\n          }\n          if((in[y][w+1]=='*')&&(in[y][w-1]=='*')){\n            cn=y;\n            //cout<<\" w+1 \"<<w<<endl;\n         for(ll u=w+1;u<q;u++){\n            if(in[y][u]=='*'){\n              re=u;\n           //   cout<<\"here\"<<endl;\n              in[y][u]='.';\n\n            }\n            else{\n                break;\n            }\n         }\n         for(ll u=w-1;u>=0;u--){\n            if(in[y][u]=='*'){\n              le=u;\n                     in[y][u]='.';\n\n            }\n            else{\n                break;\n            }\n         }\n\n         //cout<<\"y\"<<y<<\" \"<<in[y+1][w]<<endl;\n         if(in[y+1][w]!='*'){\n     flag=1;\n        }\n\n         \n          }\n        } \n    \n        }\n\n     }   \n    if(flag==1){\n        break;\n    }\n    }\n  \n    if(flag==1){\n        break;\n    }\n}\n\nif(flag==1){\n    cout<<\"NO\"<<endl;\n}\nelse{\n    cout<<\"YES\"<<endl;\n}\n}\n",
+			"j",
+			"1",
+			"profit",
+			"())   ",
+			" >(",
+			">>(",
+			"begin",
+			"    \n",
+			"\");\n",
+			"variables",
+			"function",
+			";\n",
+			"i ",
+			"[0-9]   ",
+			"4315",
+			"!",
+			"gcc",
+			"cutLen",
+			" ;",
+			"prim",
+			"string",
+			"false",
+			"NAME",
+			"expr",
+			"np",
+			"addMi",
+			"add",
+			"addMinus",
+			"\t\t//calculate the result corresponding to token\n",
+			"Token_value get_t",
+			"Token_value get_to",
+			"get_to",
+			"get",
+			"token",
+			"mai",
+			"main",
+			"visisted",
+			"cout",
+			"public",
+			"nV",
+			"element",
+			"push",
+			" ;",
+			"        {{",
+			"\n#",
+			"//Deepak Aggarwal, Coding Blocks\n\n#include <iostream>\nusing namespace std;\nint main(){\n\t// 12;\n\t\n\tchar *ptr = \"abc\";\n\tchar arr[] = \"abc\";\n\t// ptr[0] = 'k';\n\tarrr[0] = 'k';\n\tcout << ptr;\n\n\n\t// char s1[] = \"abc\";\n\n\n\t// char s2[] = s1;\t\n\n}",
+			"include",
+			"}\n",
+			"dim",
+			"N",
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"double",
+			"div",
+			"",
+			"4314",
+			"curLen",
+			"visited",
+			"10",
+			"dim"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "newcool.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1950,
+								1950
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1716.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "nee.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dp-35(travelling_salesman_with_dp).sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\Users\\Dell Indpiron\\Desktop\\cpp-toolkit-master\\cpp-toolkit-master\\Sublime_1326\\Data\\Packages\\User",
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "firstfile.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "myfile.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								809,
+								809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 417.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "cc.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								715,
+								715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 257.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "dfs_modified.sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								438,
+								426
+							]
+						],
+						"settings":
+						{
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 281.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "asas.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 215.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "practice.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1152
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 361.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "new.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 11,
+					"file": "input.in",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 12,
+					"file": "output.in",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.471711364258,
+			0.705841040841,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 127.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/c++input.sublime-build",
+	"project": "cppdebug.sublime-project",
+	"replace":
+	{
+		"height": 73.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 159.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"main"
+			]
+		],
+		"width": 784.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

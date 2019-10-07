@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[ll bin(ll a[],ll n,ll l,ll r,ll key){
+    ll mid=(l+r)/2;
+    if(l>r){
+        return -1;
+    }
+    if(a[mid]==key){
+        return mid;
+    }
+    else if(a[mid]<key){
+       // cout<<" her "<<mid<<endl;
+        return bin(a,n,mid+1,r,key);
+    }
+    else{//cout<<" here "<<mid<<endl;
+     return bin(a,n,l,mid-1,key);   
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-10(binary-search)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

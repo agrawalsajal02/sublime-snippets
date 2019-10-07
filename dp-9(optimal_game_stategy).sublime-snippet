@@ -1,0 +1,140 @@
+<snippet>
+    <content><![CDATA[/*/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+#define mod 1000000007
+//typedef vector<ll> ii;
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define ln '\n'
+#define fain(arr) for(int i=0;i<n;i++)cin>>arr[i];
+#define forstl(i,v) for(auto &i: v)
+#define PRI(x) cerr<<#x<<'='<<x<<endl;
+#define clz(a) __builtin_clz(a) // count leading zeroes
+#define ctz(a) __builtin_ctz(a) // count trailing zeroes
+#define popc(a) __builtin_popcount(a) // count set bits (for ints only diff for ll)
+//https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html for other in built
+#define  she_taught_me_to_code cin.tie(0);cout.tie(0);ios_base::sync_with_stdio(false);cin.tie(NULL);    clock_t startTime=clock();
+#define all(con) con.begin(),con.end()
+#define sz(x) ((long long)x.size())
+#define error(args...) { string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
+
+void err(istream_iterator<string> it) {}
+template<typename T, typename... Args>
+
+void err(istream_iterator<string> it, T a, Args... args) {
+    cout << *it << " = " << a << endl;
+    err(++it, args...);
+}
+ll dp[110][110]={-1};
+ll find(ll i,ll n,ll a[]){
+if(i==n){
+    return 0;
+}
+if(dp[i][n]!=-1){
+    return dp[i][n];
+}
+ll ans=INT_MIN;
+ll ans1=a[i]+min(find(i+2,n,a),find(i+1,n-1,a));
+ll ans2=a[n-1]+min(find(i+1,n-1,a),find(i,n-2,a));
+return dp[i][n]=max(ans1,ans2);
+}
+
+int main(){
+she_taught_me_to_code
+
+
+
+    ll t;
+    cin>>t;
+    while(t--){
+ll n;
+cin>>n;ll a[n];
+f(i,0,n)cin>>a[i];
+
+f(i,0,n+1){
+
+    f(j,0,n+1){
+        dp[i][j]=-1;
+    }
+}
+cout<<find(0,n,a)<<endl;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+*/#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll harry_mixtures(ll a,ll i,ll j){
+if(i>=j){
+    //return its sum
+    return 0;
+}ll val=0;
+ll v1=0;
+ll v2=0;
+for(ll k=i;k<j;k++){
+     val=(a[k]+val)%100;
+    v1=harry_mixtures(a,i,k);
+    v2=harry_mixtures(a,k+1,j);
+
+}
+val=(a[j]+val)%100;
+
+}
+int main(){
+ll n;
+while(cin>>n){
+ll a[n];
+for(ll x=0;x<n;x++){
+ cin>>a[x];   
+}
+
+cout<<harry_mixtures(a,0,n-1)<<endl;
+
+
+
+}
+
+}
+   ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-9(optimal_game_stategy)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

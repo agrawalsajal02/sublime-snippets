@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[struct my {
+    ll x, y, z;
+    my () {}
+    my (ll x, ll y, ll z) : x(x), y(y), z(z) {}
+
+    bool operator < (const my &other) const {
+        if (x != other.x) return x < other.x;
+        if (y != other.y) return y < other.y;
+        return z < other.z;
+    }
+    // also for ==, > if needed.
+};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>tuple</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

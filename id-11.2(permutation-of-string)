@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[void per(char *s,char *p,ll i,ll j){
+if(s[i]=='\0'){
+    p[j]='\0';
+    cout<<p<<endl;
+    return ;
+}
+//first we take the current characte and feed it in the output array
+    p[j]=s[i];
+    per(s,p,i+1,j+1);
+//if we do not take  the first characte
+    per(s,p,i+1,j);
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-11.2(permutation-of-string)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

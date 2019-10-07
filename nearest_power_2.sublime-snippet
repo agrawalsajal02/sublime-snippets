@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[pow(2,floor(log2(n)))
+        //find first msb 1  and all the bit left to it remove it
+that is hightst power os two]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>nearest_power_2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

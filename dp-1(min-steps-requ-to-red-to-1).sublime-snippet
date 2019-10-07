@@ -1,0 +1,74 @@
+<snippet>
+    <content><![CDATA[//dp
+//minimum steps to reduce n to 1 following rules
+/*1)n divi by 3 and 2
+  2)n can be subracted by 1
+
+*/
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+const ll inf = (ll)1e9;
+ll a[100000]={0};
+//momorized solution
+ll reduce(ll n){
+    if(a[n]!=0){
+        return a[n];
+    }
+    if (n==1){
+        //ek bhi operatin karne ki jarurat nhi he;
+            return 0;
+    }
+    ll q1=inf,q2=inf,q3=inf;
+    if(n%3==0){
+        q1=(1+reduce(n/3));
+   }
+   if(n%2==0){
+    q2=(1+reduce(n/2));
+   }  q3=(1+reduce(n-1));
+   a[n]=min(q1,min(q2,q3));
+return min(q1,min(q2,q3));
+}
+//dp solution(iterative solution)
+ll reduce_by_dp(ll n){
+    ll dp[1000];
+    //base case;
+    dp[0]=0;dp[1]=0;dp[2]=1;dp[3]=1;
+if(n<=3){
+    return dp[n];
+}
+
+for(ll i=4;i<=n;i++){
+    ll q1=inf,q2=inf,q3=inf;
+if(i%3==0){
+    q1=1+a[i/3];
+}
+if(i%2==0){
+    q2=1+a[i/2];
+}
+    q3=1+a[i-1];
+
+dp[i]=min(q1,min(q2,q3));  
+}
+
+return dp[n];
+
+}
+int main(){
+ll n;
+n=13151;
+memset(a,0,1000);
+ll ans=reduce(n);
+cout<<ans;
+
+
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-1(min-steps-requ-to-red-to-1)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

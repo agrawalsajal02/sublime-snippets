@@ -1,0 +1,56 @@
+<snippet>
+    <content><![CDATA[//rabin karp algo
+//best and average o(m+n)
+//worst case o((n-m)*m)
+//based on rolling hash function
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+ll prime= 119;
+ll createhashvalue(string s,ll n){//o(m)
+ ll result=0;
+ for(ll i=0;i<n;i++){
+    result+=(ll)s[i]*(ll)pow(prime,i);
+ }
+ return result;
+}
+ll recalcultehash(string s,ll oldindex,ll newindex,ll oldhash,ll patlength){
+ll newhash=oldhash-s[oldindex];
+newhash=newhash/(ll)prime;
+newhash=newhash+(ll)s[newindex]*pow(prime,patlength-1);
+return newhash;
+}
+bool checkequal(string s1,string s2,ll st,ll e,ll st1,ll e1){
+    if(e1-st1!=e-st){
+        return false;
+    }
+while(st<=e && st1<=e1){
+if(s1[st]!=s2[st1])return false;
+st++;
+st1++;
+}
+return true;
+}
+int main(){
+
+string s="ababcabdab";
+string pat="abd";
+ll pathash=createhashvalue(pat,pat.length());
+ll strhash=createhashvalue(s,pat.length());
+for(ll i=0;i<=s.length()-pat.length();i++){
+    if(pathash==strhash &&checkequal(s,pat,i,i+pat.length()-1,0,pat.length()-1)){
+        cout<<"i "<<i<<endl;
+    }
+
+    if(i<s.length()-pat.length()){
+strhash=recalcultehash(s,i,i+pat.length(),strhash,pat.length());
+    }
+
+}
+}   ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>rabinkarp_algo</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

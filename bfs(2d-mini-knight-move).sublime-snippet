@@ -1,0 +1,75 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll int
+#define endl '\n'
+bool m[9][9];
+ll level[9][9];
+ll w[8] = {2,1,-1,-2,-2,-1,1,2};
+ll y[8] = {1,2,2,1,-1,-2,-2,-1};
+ll bfs(string sor,string dest){
+//cout<<sor<<" "<<dest<<endl;
+m[sor[0]-97+1][sor[1]-'0']=1;
+level[sor[0]-97+1][sor[1]-'0']=0;
+ll sr1=sor[0]-97+1;
+ll sr2=sor[1]-'0';
+ll des1=dest[0]-97+1;
+ll des2=dest[1]-'0';
+
+//cout<<" news " <<sr1<<"  "<<sor[0]-97<< " w "<<sr2<<"r  "<<des1<<" p "<<des2<<endl;
+queue< pair<ll,ll> >q;
+q.push({sr1,sr2});
+while(!q.empty()){
+auto p=q.front();q.pop();
+  //  cout<<" heree "<<p.first<<" "<<p.second<<" ------"<<endl;
+
+for(ll b=0;b<8;b++){
+if(p.first+w[b]<=8&&p.first+w[b]>=1&&p.second+y[b]<=8&&p.second+y[b]>=1&&m[p.first+w[b]][p.second+y[b]]==0){
+//cout<<" gg b "<<b<<" "<<p.first+w[b]<<" "<<p.second+y[b]<<" "<<w[b]<<" "<<y[b]<<endl;    
+    q.push({p.first+w[b],p.second+y[b]});
+m[p.first+w[b]][p.second+y[b]]=1;    
+level[p.first+w[b]][p.second+y[b]]=level[p.first][p.second]+1;    
+
+if((p.first+w[b]==des1)&&(p.second+y[b]==des2)){
+    return level[p.first+w[b]][p.second+y[b]];
+ }
+}
+
+
+}
+}
+
+return level[des1][des2];   
+}
+int main(){
+
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+string a,b;
+cin>>a>>b;
+
+for(ll u=0;u<9;u++){
+    for(ll x=0;x<9;x++){
+    m[u][x]=0;
+    level[u][x]=0;        
+    }
+
+}
+cout<<bfs(a,b)<<endl;
+
+    }
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>bfs(2d-mini-knight-move)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

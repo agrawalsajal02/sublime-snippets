@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[//rabin karp naive algorithm
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+int main(){
+string input;
+string match;
+ll cnt=0;
+cin>>input>>match;
+for(ll i=0;i<input.length();i++){
+    ll j=i;
+    ll k=0;
+    while(k<match.length()){
+        if(match[k]!=input[j]){
+            break;
+        }
+        k++;j++;
+    }
+    if(k==match.length())cnt++;
+}
+cout<<cnt<<endl;
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>stringmatching(n^2)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

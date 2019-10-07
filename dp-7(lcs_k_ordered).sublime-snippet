@@ -1,0 +1,66 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll a[2005];ll b[2005];
+ll dp[2005][2005][5];
+ll m,n;
+//recursion solution
+/*ll k_lcs(ll i,ll j,ll k){
+if(i==n||j==m){
+return 0;
+}
+if(a[i]==b[j]){
+    return k_lcs(i+1,j+1,k)+1;
+}
+else{
+    ll q1=0;
+    if(k>0)q1=k_lcs(i+1,j+1,k-1)+1;
+    ll q2=k_lcs(i+1,j,k);
+    ll q3=k_lcs(i,j+1,k);
+    return max(q1,max(q2,q3));
+}
+
+}*/
+//dp solution
+ll k_lcs(ll i,ll j,ll k){
+if(i==n||j==m){
+return 0;
+}
+if(dp[i][j][k]!=-1){
+    return dp[i][j][k];
+}ll res=0;
+if(a[i]==b[j]){
+    dp[i][j][k]=k_lcs(i+1,j+1,k)+1;
+    return dp[i][j][k];
+}
+else{
+    if(k>0)res=k_lcs(i+1 ,j+1,k-1)+1;
+    res=max(res,k_lcs(i+1,j,k));
+    res=max(res,k_lcs(i,j+1,k));
+    dp[i][j][k]=res;
+    return dp[i][j][k];
+}
+
+}
+
+int main(){
+ll k;
+cin>>n>>m>>k;
+for(ll x=0;x<n;x++){
+ cin>>a[x];   
+}
+for(ll x=0;x<m;x++){
+ cin>>b[x];   
+}
+memset(dp,-1,sizeof(dp));
+cout<<k_lcs(0,0,k);
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-7(lcs_k_ordered)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

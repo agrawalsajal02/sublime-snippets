@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+ll lazy[1000]={0};
+ll query_lazy(ll *tree,ll st,ll ed,ll qe,ll qr,ll index){
+//first resolve lazy value(oending updates)
+if(lazy[index]!=0){
+tree[index]+=lazy[index];
+if(st!=ed){
+    lazy[2*index+1]+=lazy[index];
+    lazy[2*index+2]+=lazy[index];
+}
+lazy[index]=0;
+}
+
+
+//for noverlap
+if(st>qr||ed<qe){
+    return INT_MAX;
+}
+
+
+//then check for overlap
+if(st>=qe&&ed<=qr){
+    return tree[index];
+}
+
+
+ll mid=(st+ed)/2;
+ll left=query_lazy(tree,st,mid,qe,qr,2*index+1);
+ll right=query_lazy(tree,mid+1,ed,qe,qr,2*index+2);
+
+return min(left,right);
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>seg_tree(query_lazy)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

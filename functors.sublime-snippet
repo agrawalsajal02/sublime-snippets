@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[//funcors
+//object behaves as function
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+//or can create struct , it as defallut public
+class car{
+public:
+ void operator()(int a,int b){
+    cout<<" inside functor "<<a<<" "<<b<<endl;
+ }
+};
+int main(){
+
+car cc;
+cc(4,6);
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>functors</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

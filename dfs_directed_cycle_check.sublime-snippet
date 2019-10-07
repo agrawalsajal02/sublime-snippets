@@ -1,0 +1,28 @@
+<snippet>
+    <content><![CDATA[
+vector<ll>v[100000];
+bool visi[100000];
+bool dfs(ll node,bool *sta){
+visi[node]=1;
+sta[node]=1;
+for(ll i=0;i<v[node].size();i++){
+if(!visi[v[node][i]]){
+  bool cyclefind=dfs(v[node][i],sta);
+  if(cyclefind){
+    return true;
+  }
+}
+else if(sta[v[node][i]]==1){
+  return true;
+}
+}   
+sta[node]=0;
+return false;
+
+    }
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dfs_directed_cycle_check</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

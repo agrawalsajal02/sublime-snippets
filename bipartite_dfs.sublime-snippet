@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[ ll color[100010];
+ll flag=0;
+void isBipartite_using_dfs(ll n,bool current_color){
+    color[n]=current_color;
+    for(auto i:v[n]){
+        if(color[i]==color[n])flag=1;
+//without above condition ,can also check on each edge after coloring whether they are of same color or not
+        if(color[i]==-1){
+isBipartite_using_dfs(i,current_color^1);
+        }
+
+    }
+/*
+4 4
+0 1
+2 0
+1 3
+2 3
+*/
+    }
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>bipartite_dfs</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

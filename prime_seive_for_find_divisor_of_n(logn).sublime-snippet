@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[ll primes[100010];
+void pre(){
+  //nloglogn
+primes[1]=1;
+for(ll i=2;i<=100000;i++){
+  primes[i]=i;
+}
+for(ll i=2;i<=100000;i=i+2){
+  primes[i]=2;
+}
+for(ll i=3;i*i<=100000;i++){
+  if(primes[i]==i){
+  for(ll j=2*i;j<=100000;j=j+i){
+    if(primes[j]==j)
+    primes[j]=i;
+  }
+}
+}
+}
+set<ll> getprimefactors(ll n){
+//log n time for each query
+vector<ll>v;
+set<ll>s;
+while(primes[n]!=1){
+  v.push_back(primes[n]);
+s.insert(primes[n]);
+  n=n/primes[n];
+}
+reverse(v.begin(),v.end());
+for(ll i=0;i<v.size();i++){
+  cout<<v[i]<<" ";
+}
+return s;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>prime_seive_for_find_divisor_of_n(logn)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

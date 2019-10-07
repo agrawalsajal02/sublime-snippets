@@ -1,0 +1,40 @@
+<snippet>
+    <content><![CDATA[
+void updatetree(ll *tree,ll st,ll  ed,ll i,ll incr,ll index){
+//same as build
+  //for no overlaap return
+  //step1:-
+  if(i<st||i>ed){
+    return;
+  }
+
+//step2:-always put leaf node after no overlap
+  if(st==ed){
+    //means we are at leaf ans atour required node for increment
+    tree[index]+=incr;
+    return;
+  }
+
+
+
+  //else partial overlap
+ll mid=(st+ed)/2;
+updatetree(tree,st,mid,i,incr,2*index+1);
+updatetree(tree,mid+1,ed,i,incr,2*index+2);
+tree[index]=min(tree[2*index+1],tree[2*index+2]);
+
+return;
+
+
+
+
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>seg_tree(update_node)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

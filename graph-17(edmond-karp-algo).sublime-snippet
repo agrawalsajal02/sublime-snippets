@@ -1,0 +1,141 @@
+<snippet>
+    <content><![CDATA[//edmond carp algorithm
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+void printAugmemtedPaths(vector<vector<ll> >AugmemtedPaths);
+bool bfs(ll **residualcapacity,ll source,ll sink,ll n,ll *parent){
+//after each update i get new graph
+  bool visited[n];
+  memset(visited,0,sizeof(visited));
+  queue<ll>que;
+  que.push(source);visited[source]=true;
+  bool foundAugmemtedPath=false;
+  while(!que.empty()){
+ll u=que.front();que.pop();
+for(ll v=0;v<n;v++){
+  if((visited[v]==false) &&( residualcapacity[u][v] > 0)){
+    que.push(v);
+    parent[v]=u;
+    visited[v]=true;
+
+if(v==sink){
+  foundAugmemtedPath=true;
+  break;
+}
+  }
+  }
+}
+ 
+return foundAugmemtedPath;
+}
+
+ll maxflow(ll **capacity,ll source,ll sink,ll q){
+ll **residualcapacity=new ll*[q];
+//initialize residual capacity graph with initial capacity graph
+for(ll x=0;x<q;x++){
+ residualcapacity[x]=new ll[q];   
+}
+for(ll w=0;w<q;w++){
+    for(ll x=0;x<q;x++){
+        residualcapacity[w][x]=capacity[w][x];
+    }
+}
+
+
+ll *parent=new ll[1000];
+vector<vector<ll> >AugmemtedPaths;
+ll maxflow=0;
+while(bfs(residualcapacity,source,sink,q,parent)){
+//for  currentAug path
+  vector<ll>currAughPath;
+  ll flow=INT_MAX;//in the current aumemted path , it will find the edge with min weight
+ll v=sink;
+while(v!=source){
+  currAughPath.push_back(v);
+  ll u=parent[v];
+  if(flow>residualcapacity[u][v]){
+    flow=residualcapacity[u][v];
+  }
+  v=u;
+ }
+currAughPath.push_back(source);
+reverse(currAughPath.begin(),currAughPath.end());
+AugmemtedPaths.push_back(currAughPath);
+maxflow+=flow;
+
+//update residual capacity graph
+v=sink;
+while(v!=source){
+ll u=parent[v];
+residualcapacity[u][v]-=flow;
+residualcapacity[v][u]+=flow;
+v=u;
+}
+currAughPath.clear();
+}
+printAugmemtedPaths(AugmemtedPaths);
+return maxflow;
+}
+
+
+void printAugmemtedPaths(vector<vector<ll> >AugmemtedPaths){
+for(ll x=0;x<AugmemtedPaths.size();x++){
+    for(ll w=0;w<AugmemtedPaths[x].size();w++){
+        cout<<AugmemtedPaths[x][w]<<" , ";
+    }
+    cout<<endl;
+   // cout<<" size "<<AugmemtedPaths[x].size()<<endl;
+}
+}
+
+
+
+  
+int main(){
+ll n,e;
+cin>>n>>e;
+ll **capacity=new ll*[n];
+for(ll i=0;i<n;i++){
+  capacity[i]=new ll[n];
+for(ll j=0;j<n;j++){
+  capacity[i][j]=0;
+}
+}
+for(ll i=0;i<e;i++){
+  ll u,v,wei;
+  cin>>u>>v>>wei;
+  capacity[u][v]=wei;
+}
+
+cout<<maxflow(capacity,0,1,n)<<endl;
+
+/*
+input:-
+5 7
+0 2 100
+0 3 50
+2 3 50
+2 4 50
+3 4 100
+2 1 50
+4 1 125
+
+
+
+0 , 2 , 1 , 
+0 , 2 , 4 , 1 , 
+0 , 3 , 4 , 1 , 
+150
+
+
+*/
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-17(edmond-karp-algo)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

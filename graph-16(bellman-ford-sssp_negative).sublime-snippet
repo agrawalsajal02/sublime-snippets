@@ -1,0 +1,72 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+class edge{
+public:
+  ll u,v,weight;
+};
+class graph{
+public:
+  ll n,e;
+  edge *ed;
+
+  graph(ll n,ll e){
+this->n=n;
+this->e=e;
+ed=new edge[e];
+  }
+ void addedge(ll st,ll en,ll weight,ll cnt){
+     ed[cnt].u=st;
+     ed[cnt].v=en;
+     ed[cnt].weight=weight;
+ }
+ void bellmanford(ll starting){
+ll *dis=new ll[n];
+for(ll i=0;i<n;i++)dis[i]=INT_MAX;
+dis[starting]=0;
+ll cnt=0;
+for(ll i=0;i<n-1;i++){
+  for(ll j=0;j<e;j++){
+    cnt++;
+    ll sour=ed[j].u;
+    ll dest=ed[j].v;
+    ll wei=ed[j].weight;
+    if((dis[sour]!=INT_MAX) &&(dis[sour]+wei < dis[dest])){
+      dis[dest]=dis[sour]+wei ;
+      }
+    }
+}
+//check for negative cycle
+  for(ll j=0;j<e;j++){
+    ll sour=ed[j].u;
+    ll dest=ed[j].v;
+    ll wei=ed[j].weight;
+    if((wei!=INT_MAX) &&(dis[sour]+wei < dis[dest])){
+    cout<<" graph contain negative cycle"<<endl;
+    return ;
+      }
+    }
+for(ll i=0;i<n;i++){
+  cout<<i<<" for distane "<<dis[i]<<endl;
+}
+cout<<" cnt "<<cnt<<endl;
+ } 
+};
+int main(){
+ll n,eq;cin>>n>>eq;
+graph g(n,eq);
+for(ll i=0;i<eq;i++){
+ll a,b,c;cin>>a>>b>>c;
+g.addedge(a,b,c,i);
+}
+g.bellmanford(0);
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-16(bellman-ford-sssp_negative)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[
+
+inline ll Scan() {
+    ll x=0;int f=1; char ch=getchar();
+    while(ch<'0'||ch>'9'){if(ch=='-') f=-1; ch=getchar();}
+    while(ch>='0'&&ch<='9'){x=x*10+ch-'0'; ch=getchar();}
+    return x*f;
+}
+      /*inline ll input() {
+  char c = gc();
+  while(c<'0' || c>'9') c = gc();
+  ll ret = 0;
+  while(c>='0' && c<='9') {
+    ret = 10 * ret + c - 48;
+    c = gc();
+  }
+  return ret;
+}*//*
+void fastscan(int &x)
+    {
+        bool neg=false;
+        register int c;
+        x =0;
+        c=getchar();
+        if(c=='-')
+        {
+            neg = true;
+            c=getchar();
+        }
+        for(;(c>47 && c<58);c=getchar())
+            x = (x<<1) + (x<<3) +c -48;
+        if(neg)
+            x *=-1;
+    }
+    //fastscan(x);
+// ll t; t=input();*/
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fast_int_input</tabTrigger>  
+      <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

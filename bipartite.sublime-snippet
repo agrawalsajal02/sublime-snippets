@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+ll color[100000];
+      bool isBipartite(ll n){
+//maintain a color array 
+//beware of disconnected componnent and graph cleaning
+  memset(color,-1,sizeof(color));
+  color[n]=0;
+  queue<ll>q;
+  q.push(n);
+  while(!q.empty()){
+   ll u=q.front();q.pop();
+   for(auto V:v[u]){
+    if(color[V]==color[u]){
+      return false;
+    }
+    if(color[V]==-1){
+     color[V]=1-color[u];
+     q.push(V);
+    }
+   }
+  }
+  return true; 
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>bipartite</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

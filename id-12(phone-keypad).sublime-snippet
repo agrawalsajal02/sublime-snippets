@@ -1,0 +1,79 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void phone(string s,ll i,string r){
+if(s[i]=='\0'){
+    cout<<r<<endl;
+    return;
+}
+
+if(s[i]=='0'){
+    phone(s,i+1,r);
+}
+else if(s[i]=='1'){
+ phone(s,i+1,r);   
+}
+else if(s[i]=='2'){
+ phone(s,i+1,r+"A");
+ phone(s,i+1,r+"B");
+ phone(s,i+1,r+"C");   
+}
+else if(s[i]=='3'){
+ phone(s,i+1,r+"D");
+ phone(s,i+1,r+"E");
+ phone(s,i+1,r+"F");   
+}
+else if(s[i]=='4'){
+ phone(s,i+1,r+"G");
+ phone(s,i+1,r+"H");
+ phone(s,i+1,r+"I");   
+}
+else if(s[i]=='5'){
+ phone(s,i+1,r+"J");
+ phone(s,i+1,r+"K");
+ phone(s,i+1,r+"L");   
+}
+else if(s[i]=='6'){
+ phone(s,i+1,r+"M");
+ phone(s,i+1,r+"N");
+ phone(s,i+1,r+"O");   
+}
+else if(s[i]=='7'){
+ phone(s,i+1,r+"P");
+ phone(s,i+1,r+"Q");
+ phone(s,i+1,r+"R");
+ phone(s,i+1,r+"S");   
+}
+else if(s[i]=='8'){
+ phone(s,i+1,r+"T");
+ phone(s,i+1,r+"U");
+ phone(s,i+1,r+"V");    
+}
+else if(s[i]=='9'){
+ phone(s,i+1,r+"W");
+ phone(s,i+1,r+"X");
+ phone(s,i+1,r+"Y");
+ phone(s,i+1,r+"Z");   
+}
+
+
+
+
+}
+int main(){
+string s,r="";
+cin>>s;
+
+phone(s,0,r);
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>id-12(phone-keypad)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

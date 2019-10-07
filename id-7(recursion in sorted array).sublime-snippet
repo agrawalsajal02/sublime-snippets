@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+bool recu(ll a[],ll n){
+//cout<<n<<endl;
+if(n==0){
+    return true;
+}
+bool p=recu(a,n-1);
+if((a[n]>=a[n-1])&&(p==true)){
+  // cout<<n<<"  here "<<endl;
+    return true;
+}
+return false;
+
+}
+int main(){
+ll n;
+cin>>n;
+ll a[n];
+for(ll w=0;w<n;w++){
+ cin>>a[w];   
+}
+if(recu(a,n-1)){
+    cout<<"it is sorted"<<endl;
+}
+else{
+cout<<" it is not sorted "<<endl;
+}
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-7(recursion in sorted array)</tabTrigger>    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

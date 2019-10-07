@@ -1,0 +1,174 @@
+<snippet>
+    <content><![CDATA[//documantation
+/*
+https://www.codechef.com/problems/IITK1P10
+
+step 1)dfs_order on tree
+  a)make 3 array preorder trivarsal , in(discovery time) , out(finishing time) 
+  b)learn that dfs code , remember 
+    1)in represent no of nodes that a we have seen before visiting that node
+    2)out represent the no of nodes we have seen after visitng current node
+    therefore we can find number of subtree nodes in constant time
+    now if want to find each of subtree node 
+    3)that preorder trivarsal vector helps you in that , 
+      just traverse from in[n] to out[n] in preorder trivarsal , and that node 
+      are present in subtree
+    4)we can prove that nodes present in subtree  has disover time in between discovered time of starting node and ending node
+ c)now make segment tree on weight array,  using build whether weight is 0 or not
+ 4)for update on segemt tree it is point update there for no need for lazy
+ 5)for range query , you have to find the starting and ending part of search 
+ which you can easily find using step b.3
+6)cheers
+
+*we can also use fenwick tree on it
+*/
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[1000000];
+ll out[1000000];
+ll in[1000000];
+ll cnt=0;
+vector<ll>vv;
+
+//dfs order 
+    void dfs(ll n,ll par){
+    in[n]=++cnt;
+    vv.push_back(n);
+    for(auto val : v[n]){
+         if(val!=par){
+            dfs(val,n);
+        }
+            }
+                out[n]=cnt;
+                                }
+
+void build(ll weight[],ll st,ll ed,ll *tree, ll index){
+if(st==ed){
+    if(weight[st]==0){
+    tree[index]=1;
+}
+    else{
+        tree[index]=0;
+    }
+    return ;
+}
+ll mid=(st+ed)/2;
+build(weight,st,mid,tree,2*index);
+build(weight,mid+1,ed,tree,2*index+1);
+tree[index]=tree[2*index]+tree[2*index+1];
+}
+ll query(ll *tree,ll st,ll se,ll qs,ll qe,ll index){
+    if(qs<=st&&qe>=se){
+     return tree[index];
+    }
+    if(se<qs||st>qe){
+        return 0;
+    }
+    ll mid=(st+se)/2;
+    ll left=query(tree,st,mid,qs,qe,2*index);
+    ll right=query(tree,mid+1,se,qs,qe,2*index+1);
+    return (left+right);
+}
+void update(ll *tree,ll st,ll ed,ll i,ll val,ll index){
+    if(i>ed||i<st){
+        return;
+    }
+    if(st==ed){
+tree[index]=val;
+return ;
+    }
+    ll mid=(st+ed)/2;
+    update(tree,st,mid,i,val,2*index);
+    update(tree,mid+1,ed,i,val,2*index+1);
+    tree[index]=tree[2*index]+tree[2*index+1];
+    return ;
+}
+int main(){
+ll n,q;
+cin>>n>>q;
+f(i,0,n-1){
+ll x,y;
+cin>>x>>y;
+    v[x].push_back(y);
+    v[y].push_back(x);
+}
+f(i,0,n+1){
+    in[i]=0;
+    out[i]=0;
+}
+dfs(1,1);
+ll *tree=new ll[4*n+1];
+ll weight[n];
+f(i,1,n+1)cin>>weight[i];
+
+build(weight,1,n,tree,1);
+
+
+
+
+/*f(i,1,2*n){
+    cout<<tree[i]<<" ";
+}cout<<endl<<endl;
+/*
+f(i,0,n){
+cout<<vv[i]<<" ";
+}cout<<endl;
+f(i,1,n+1){
+cout<<in[i]<<" ";
+}
+cout<<endl;
+f(i,1,n+1){
+cout<<out[i]<<" ";
+}
+*/
+//cout<<endl<<endl;
+
+
+
+while(q--){
+    char c;
+    cin>>c;
+    if(c=='U'){
+            ll x,v;
+            cin>>x>>v;
+            //add value v to node x
+       weight[x]=weight[x]+v;
+  // cout<<" sa "<<  weight[x]<<endl;
+    if(weight[x]==0){
+update(tree,1,n,x,1,1);                      
+    }
+    else if(weight[x]!=0){
+update(tree,1,n,x,0,1);                      
+    }
+
+
+     }
+    else if(c=='Q'){
+        ll x;
+        cin>>x;
+
+        ll cn=0;
+        //number of nodes in rooted subtree whose value is equal to 0
+        ll stat=in[x];
+        ll end=out[x];
+        cout<<query(tree,1,n,stat,end,1)<<endl;
+
+      /*
+time consuming method
+        for(ll i=stat;i<=end;i++){
+            if(weight[i]==0){
+                cn++;
+            }
+        }*/
+        //cout<<cn<<endl;
+    }
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dfs_order(dfs+segment tree)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

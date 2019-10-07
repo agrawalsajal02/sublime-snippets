@@ -1,0 +1,30 @@
+<snippet>
+    <content><![CDATA[unordered_map<string,vector<string> >m;
+map<string,bool>visited;
+void dfs(string s){
+visited[s]=true;
+for(auto i:m[s]){
+  if(visited[i]==0){
+    dfs(i);
+  }
+}
+}
+int main(){
+
+ll n,e;
+cin>>n>>e;
+for(ll x=0;x<e;x++){
+ string a,b,c;
+ cin>>a>>b;
+m[a].push_back(b);
+m[b].push_back(a);
+
+}
+
+dfs("modi");
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph_dfs_string</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

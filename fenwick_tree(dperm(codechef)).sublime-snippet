@@ -1,0 +1,123 @@
+<snippet>
+    <content><![CDATA[//https://www.codechef.com/problems/DPERM
+//good question on inverion count
+/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+#define mod 1000000007
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define endl '\n'
+#define PRI(x) cerr<<#x<<'='<<x<<endl;
+#define all(con) con.begin(),con.end()
+#define sz(x) ((long long)x.size())
+ll bit[200010]={0};
+ll query(ll i){
+ll sum=0;
+while(i>0){
+sum+=bit[i];
+i=i-(i&(-(i)));
+}
+return sum;
+
+}
+void update(ll i,ll inc,ll n){
+while(i<=n){
+    bit[i]+=inc;
+i=i+(i&(-(i)));    
+}
+}
+int main(){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    ll t;
+    cin>>t;
+    while(t--){
+ll n,d;
+cin>>n>>d;ll a[n+1],b[n+1];
+for(ll j=1;j<=n;j++){
+    cin>>a[j];
+    b[a[j]]=j;
+}
+
+ll ans=0;
+bool poss=1;
+
+for(ll i=1;i<=d;i++){
+vector<ll>v,v2;
+    for(ll j=i;j<=n;j=j+d){
+v.pb(b[j]);
+v2.pb(b[j]);
+    }
+sort(all(v));
+ll maxn=v[v.size()-1];
+    for(ll j=i;j<=n;j=j+d){
+if(j!=(v[(j-i)/d])){
+poss=0;
+break;
+}
+}
+for(ll j=v2.size()-1;j>=0;j--){    
+ans+=query(v2[j]-1);
+
+
+
+update(v2[j],1,maxn);
+}
+
+//again making all those bit position  to 0 where we changes earlier timecom:-
+//remember do not clean the whole bit , which is not needed
+for(ll j=v2.size()-1;j>=0;j--){    
+update(v2[j],-1,maxn);
+}
+
+
+if(!poss){
+    break;
+}
+
+
+}
+if(!poss){
+        cout<<"-1"<<endl;
+}
+else{
+cout<<ans<<endl;
+}
+
+
+
+    }
+
+
+
+
+
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>fenwick_tree(dperm(codechef))</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

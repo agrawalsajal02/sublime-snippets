@@ -1,0 +1,126 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 1000000000
+ll k;
+vector<ll>b;
+vector<ll>c;
+vector< vector<ll> > multiply(vector<vector<ll> >v1,vector<vector<ll> >v2){
+vector< vector<ll> >c1(k+1,vector<ll>(k+1));
+for(ll i=1;i<=k;i++){
+     for(ll j=1;j<=k;j++){
+        for(ll x=1;x<=k;x++){
+         //iterate for every element
+        c1[i][j]=(c1[i][j]+ (v1[i][x]*v2[x][j])% mod)%mod;
+        }
+     }               
+}
+return c1;
+} 
+vector< vector<ll> >pow(vector< vector<ll> >A,ll p)
+{
+
+//base case
+    if(p==1){
+        return A;
+    }
+//rec case;
+    //x pow a = (x pow a/ 2 ) square 2  for even
+    // orif odd then (x*previous)
+    if(p&1){
+        return multiply(A,pow(A,p-1));
+    }
+    else{
+        //we compute chota answer
+        vector< vector<ll> >x=pow(A,p/2);
+        return multiply(x,x);
+    }
+}
+ll comp(ll n){
+if(n==0)return 0;
+if(n<=k){
+    return b[n-1];
+}
+else{
+    
+vector<ll>f1(k+1);
+    //built the matrix exponentiation
+//determine the f1 vector
+for(ll i=1;i<=k;i++){
+    f1[i]=b[i-1];
+} 
+//step 3:-transformation matrix
+vector< vector<ll> >t(k+1,vector<ll>(k+1));
+//lets initialize t;
+for(ll i=1;i<=k;i++){
+    for(ll j=1;j<=k;j++){
+        if(i<k){
+           //last row ko chod ke baki rows me kam karna he
+        if(j==i+1){
+            t[i][j]=1;
+        }
+        else{
+            t[i][j]=0;
+        }
+        continue;
+        }
+        //last row , coefficient in the reverse order
+        t[i][j]=c[k-j];
+    }
+} 
+
+
+
+
+
+//3.compute
+t = pow(t,n-1);
+
+//4.mulitly  by f1
+ll res=0;
+// only first row and the f11 will multiply
+for(ll i=1;i<=k;i++){
+    res=(res+ (t[1][i]*f1[i])%mod)%mod;
+
+}
+
+return res%mod;
+
+}
+}
+int main(){
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+cin>>k;
+
+for(ll j=0;j<k;j++){
+    ll e;cin>>e;
+    b.push_back(e);
+}
+
+for(ll j=0;j<k;j++){
+    ll e;cin>>e;
+    c.push_back(e);
+}ll n;
+cin>>n;
+cout<<comp(n)<<endl;
+b.clear();
+c.clear();
+
+
+
+    }
+
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-5(matrixexponentiation)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,74 @@
+<snippet>
+    <content><![CDATA[#include<iostream>
+#include<vector>
+using namespace std;
+#define ll long long
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[100000];
+bool check_safe(ll n,ll val,ll i,ll color[]){
+for(auto vv:v[val]){
+  if(color[vv]==i){
+    return false;
+  }
+}
+return true;
+}
+bool m_color(ll n,ll c,ll e,ll color[],ll val){
+if(val==n+1){
+  //cout<<" here "<<endl;
+  return true;
+}
+/*cout<<" val "<<val<<endl;
+f(i,1,n+1){
+  cout<<color[i]<<" ";
+}cout<<endl;
+*/
+
+for(ll i=1;i<=c;i++){
+if(check_safe(n,val,i,color)){
+color[val]=i;
+bool isnextvertixposble=m_color(n,c,e,color,val+1);
+if(isnextvertixposble){
+  return true;
+}
+color[val]=0;
+}
+}
+return false;
+}
+int main(){
+ll t;
+cin>>t;
+while(t--){
+ll n,c,e;
+cin>>n>>c>>e;
+f(i,0,e){
+  ll x,y;
+  cin>>x>>y;
+  v[x].push_back(y);
+  v[y].push_back(x);
+}
+
+ll color[n+1];
+f(i,0,n+1)color[i]=0;
+
+cout<<m_color(n,c,e,color,1)<<endl;
+
+
+
+
+
+for(ll w=0;w<=n;w++){
+  v[w].clear();
+}
+        /*for (auto& q : v) {
+   q.clear();
+}*/
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+   <tabTrigger>backtracking-3(m_coloring)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

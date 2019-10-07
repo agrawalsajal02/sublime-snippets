@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main(){
+float num=364;
+float den=365;
+float p=1;
+ll cnt=1;
+
+//check with different values
+while(p>.5){
+  p=p*(num/den);
+  num--;
+  cnt++;
+}
+
+cout<<cnt<<endl;
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+ <tabTrigger>stl(Birthday_paradox)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

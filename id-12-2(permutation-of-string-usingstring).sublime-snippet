@@ -1,0 +1,34 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void permutation(string s,ll i){
+//base case
+if(s[i]=='\0'){
+    //imagine if there is null string , just print and return
+    cout<<s<<endl;
+    return;
+}
+for(ll j=i;s[j]!='\0';j++){
+//string ss=s; this can also use , but no need since string is passes by value
+swap(s[j],s[i]);
+permutation(s,i+1);
+
+swap(s[j],s[i]);}
+
+}
+int main(){
+
+string s="abc";
+permutation(s,0);
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-12.2(permutation-of-string-usingstring)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

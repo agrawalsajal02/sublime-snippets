@@ -1,0 +1,83 @@
+<snippet>
+    <content><![CDATA[//Matrix chain Multiplication
+//o n cobe
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+ll tdp[100][100];
+ll cnt=0;
+//using recursion
+ll f(ll a[],ll i,ll j){
+cnt++;
+if(i==j){
+    //base case
+    //single matrix multiply operation takes 0 cost
+    tdp[i][j]=0;
+    return 0;
+}
+if(tdp[i][j]!=-1){
+    return tdp[i][j];
+}
+ll ans=INT_MAX;
+for(ll k=i;k<j;k++){
+
+    //plus cost of multiplying two matrices
+ll cost=f(a,i,k) + f(a,k+1,j) + a[i-1]*a[k]*a[j];
+ans=min(ans,cost);
+}
+
+return tdp[i][j]=ans;
+}
+
+ll bottomup(ll a[],ll n){
+    ll dp[100][100];
+
+memset(tdp,-1,sizeof(tdp));;
+    for(ll i=1;i<n;i++){
+        dp[i][i]=0;
+    }
+
+
+for(ll L=2;L<n;L++){
+    for(ll i=1;i<=n-L;i++){
+ll  j=i+L-1;
+dp[i][j]=INT_MAX;
+for(ll k=i;k<j;k++){
+    dp[i][j]=min(dp[i][j],dp[i][k]+dp[k+1][j]+a[i-1]*a[k]*a[j]);
+    }
+}
+}/*
+for(ll i=1;i<n;i++){
+    for(ll j=1;j<n;j++){
+        cout<<dp[i][j]<<" ";
+    }cout<<endl;
+}*/
+return dp[1][n-1];
+
+
+}
+
+int main(){
+
+ll matrix[]={1,2,3,4};
+memset(tdp,-1,sizeof(tdp));
+ll n=sizeof(matrix)/sizeof(ll);
+cout<<f(matrix,1,n-1)<<endl;
+
+
+    cout<<" count "<<cnt<<endl;
+/*for(ll i=1;i<n;i++){
+    for(ll j=1;j<n;j++){
+        cout<<tdp[i][j]<<" ";
+    }cout<<endl;
+}*/
+
+cout<<" ans from bottom up "<<endl;
+cout<<bottomup(matrix,n);
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>matrix_chain_multiplication</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

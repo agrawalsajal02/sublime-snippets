@@ -1,0 +1,38 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll x,y,gcd;
+void extendedeuclidmethod(ll a,ll b){
+  if(b==0){
+    x=1;
+    y=0;
+    gcd=a;
+    return;
+  }
+  extendedeuclidmethod(b,a%b);
+ll n_x=y;
+ll n_y=x-(a/b)*y;
+x=n_x;
+y=n_y;
+}
+
+ll inverseModulo(ll a,ll m){
+  if(__gcd(a,m)!=1){
+    cout<<" in valid ";
+    return 1;
+  }
+  extendedeuclidmethod(a,m);
+//negative can be a solution , but we have to accept only positive
+  return (x+m)%m;
+}
+int main(){
+
+cout<<inverseModulo(6,7);
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+ <tabTrigger>multiplicativemoduloinverse(Exten_euclid)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

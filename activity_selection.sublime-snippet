@@ -1,0 +1,63 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define fi first
+#define se second
+bool comp(pair<ll,ll> p1,pair<ll,ll> p2){
+return (p1.se<p2.se);
+}
+int main(){
+
+  ll t;
+  cin>>t;
+  while(t--){
+ll n;
+cin>>n;
+vector< pair<ll,ll> >v;
+for(ll i=0;i<n;i++){
+ll a,b;
+cin>>a>>b;
+v.push_back({a,b}); 
+
+}
+sort(v.begin(),v.end(),comp);
+//sort acc to ending time
+//pick the activity which finished first
+//pick next activity if its starting time is greater than the finishing time of previous activity
+ll seco=v[0].se;
+ll cnt=1;
+for(ll i=1;i<n;i++){
+  if(v[i].first>=seco){
+    cnt++;
+    seco=v[i].se;
+  }
+
+}
+cout<<cnt<<endl;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>activity_selection</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

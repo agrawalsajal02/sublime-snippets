@@ -1,0 +1,67 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll primes[100010];
+void pre(){
+  //nloglogn
+primes[1]=1;
+for(ll i=2;i<=100000;i++){
+  primes[i]=i;
+}
+for(ll i=2;i<=100000;i=i+2){
+  primes[i]=2;
+}
+for(ll i=3;i*i<=100000;i++){
+  if(primes[i]==i){
+  for(ll j=2*i;j<=100000;j=j+i){
+    if(primes[j]==j)
+    primes[j]=i;
+  }
+}
+}
+}
+set<ll> getprimefactors(ll n){
+//log n time for each query
+vector<ll>v;
+set<ll>s;
+while(primes[n]!=1){
+  v.push_back(primes[n]);
+s.insert(primes[n]);
+  n=n/primes[n];
+}
+reverse(v.begin(),v.end());
+for(ll i=0;i<v.size();i++){
+  cout<<v[i]<<" ";
+}
+return s;
+}
+
+
+int main(){
+//step1
+pre();
+
+//step2
+ll n;
+cin>>n;
+set<ll>s=getprimefactors(n);
+
+//step3 :-find euiler totient
+//fie 8 means num of num coprime with 8 which are less than 8, start with 1
+ll num=1;
+ll den=1;
+for(auto it=s.begin();it!=s.end();it++){
+  ll vv=*it;
+num=num*(vv-1);
+den=den*(vv);
+}
+cout<<endl;
+cout<<(num*n)/den<<endl;
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>euler_totient_function</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

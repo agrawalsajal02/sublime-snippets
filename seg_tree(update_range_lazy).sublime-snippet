@@ -1,0 +1,49 @@
+<snippet>
+    <content><![CDATA[
+ll lazy[1000]={0};
+void updaterangeLazy(ll *tree,ll st,ll ed,ll qe,ll qr,ll incr,ll index){
+//first resolve lazy value(oending updates)
+if(lazy[index]!=0){
+tree[index]+=lazy[index];
+if(st!=ed){
+    lazy[2*index+1]+=lazy[index];
+    lazy[2*index+2]+=lazy[index];
+}
+lazy[index]=0;
+}
+
+
+//for no overlap
+if(st>qr||ed<qe){
+    return;
+}
+
+
+
+//all revious lazy vlue is resoved to this point now
+//check for complete overlap
+if(st>=qe&&ed<=qr){
+tree[index]+=incr;
+if(st!=ed){
+    lazy[2*index+1]+=incr;
+    lazy[2*index+2]+=incr;
+}
+return ;
+}
+
+
+//for partial overlap go on both side
+ll mid=(st+ed)/2;
+ updaterangeLazy(tree,st,mid,qe,qr,incr,2*index+1);
+updaterangeLazy(tree,mid+1,ed,qe,qr,incr,2*index+2);
+
+tree[index]=min(tree[2*index+1],tree[2*index+2]);
+return;
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>seg_tree(update_range_lazy)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

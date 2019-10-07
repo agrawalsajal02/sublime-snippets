@@ -1,0 +1,69 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+
+vector<ll>v[100000];
+bool visi[100000];
+bool dfs(ll node,bool *sta){
+visi[node]=1;
+sta[node]=1;
+for(ll i=0;i<v[node].size();i++){
+if(!visi[v[node][i]]){
+  bool cyclefind=dfs(v[node][i],sta);
+  if(cyclefind){
+    return true;
+  }
+}
+else if(sta[v[node][i]]==1){
+  return true;
+}
+}   
+sta[node]=0;
+return false;
+
+    }
+
+int main(){
+cout<<" enter the number of vertices and edges"<<endl;
+ll n,e;
+cin>>n>>e;
+for(ll i=0;i<e;i++){
+    ll a,b;
+    cin>>a>>b;
+    v[a].push_back(b);
+}
+memset(visi,0,sizeof(visi));
+memset(parent,-1,sizeof(parent));
+bool *sta=new bool[n];
+memset(sta,0,sizeof(sta)); 
+if(dfs(0,sta)){
+    cout<<" cycle is present"<<endl;
+}
+else{
+    cout<<" cycle is not present"<<endl;
+}
+
+for (auto& q : v) {
+   q.clear();
+}
+
+/*
+6 7
+0 1
+0 4
+1 2
+2 4
+4 3
+2 3
+3 5
+
+cycle is oresent
+*/
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>graph-8(cycle_check_directed_graph)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

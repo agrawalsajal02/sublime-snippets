@@ -1,0 +1,66 @@
+<snippet>
+    <content><![CDATA[//bfs-kahn algorithm
+//topo sort using bfs
+//imp algo
+//indeg can work here for visited array , no need of visited array
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[1000000];
+ll indeg[1000000];
+ll bfs_topo(ll n){
+//visi[n]=1;
+queue<ll>q;
+f(i,0,n){
+    if(indeg[i]==0){
+        q.push(i);
+    }
+}
+while(!q.empty()){
+    ll temp=q.front();q.pop();
+cout<<temp<<" --> ";
+    for(ll i=0;i<v[temp].size();i++){
+          indeg[v[temp][i]]--;
+          if(indeg[v[temp][i]]==0){
+            q.push(v[temp][i]);
+          }
+        
+    }
+
+}
+
+}
+int main(){
+ll n,m;
+cin>>n>>m;
+f(i,0,n+1){indeg[i]=0;
+
+}
+f(i,0,n){
+    ll a,b;                     cin>>a>>b;
+    v[a].push_back(b);          indeg[b]++;
+}
+f(i,0,n+1){
+//    visi[i]=0;
+}
+bfs_topo(n);
+/*
+
+6 7
+0 2
+1 2
+1 4
+2 4
+4 5
+2 3
+3 5
+
+*/
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>graph-10_1(topo_sort_using_bfs(kahn_algo))</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

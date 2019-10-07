@@ -1,0 +1,129 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+vector<ll>v[100000];
+ll level[10000];
+ll size[10000];
+#define LG 25
+ll parent[1000][LG];
+
+void init(ll n){
+for(ll x=0;x<=n;x++){
+    level[x]=0;
+    size[x]=0;      }      
+               }
+
+
+void dfs(ll a,ll par,ll lvl){
+parent[a][0]=par;
+level[a]=lvl;
+size[a]=1;
+for(ll i=0;i<v[a].size();i++){
+  if(v[a][i]==par){continue;}
+   dfs(v[a][i],a,lvl+1);
+  size[a]=+size[v[a][i]];
+}
+}
+
+
+
+void precompute(ll n){
+
+for(ll i=1;i<LG;i++){
+    for(ll j=1;j<=n;j++){
+  if(parent[j][i-1]){
+    parent[j][i]=parent[parent[j][i-1]][i-1];
+    }
+  }
+}
+
+}
+
+
+ll lca(ll u,ll v){
+if(level[u]<level[v]){
+  swap(u,v);
+}
+ll diff=level[u]-level[v];
+for(ll i=LG-1;i>=0;i--){
+  if((1<<i) & diff){
+    u=parent[u][i];
+  }
+
+}
+
+if(u==v){
+
+  return u;
+}
+for(ll i=LG-1;i>=0;i--){
+  if(parent[u][i] && parent[u][i]!=parent[v][i]){
+    u=parent[u][i];
+    v=parent[v][i];
+  }
+}
+
+
+return parent[u][0];
+}
+ll  walk(ll u, ll h)
+{
+  for(int i=LG-1;i>=0;i--)
+  {
+    if((h>>i) & 1)
+      u = parent[u][i];
+  }
+  return u;
+}
+
+
+
+
+int main(){
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+ll n,q;
+cin>>n>>q;
+//step 1
+for(ll w=0;w<n-1;w++){ll a,b;cin>>a>>b;
+    v[a].push_back(b);
+     v[b].push_back(a);  }
+
+//step 2 (initilize levels and sizes)
+init(n);
+
+//step 3  (initialize parent )
+for(ll w=1;w<=n;w++){
+  for(ll p=1;p<LG;p++){
+    parent[w][p]=0;
+  }
+}
+
+//step 4   (initializedd parnt used in dfs)
+dfs(1,0,0);
+
+//step 4  (initialize parent of each node used in precomputation)
+precompute(n);
+
+//step 5 lca
+
+cout<<lca(4,10)<<endl;;
+
+
+cout<<" here "<<walk(8,1);
+    }
+
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>lca</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

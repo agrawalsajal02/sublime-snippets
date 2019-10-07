@@ -1,0 +1,86 @@
+<snippet>
+    <content><![CDATA[
+//binary search :-read the pages
+        /*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+#define mod 1000000007
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define endl '\n'
+#define PRI(x) cerr<<#x<<'='<<x<<endl;
+#define all(con) con.begin(),con.end()
+#define sz(x) ((long long)x.size())
+
+ll fun(ll a[],ll n,ll val,ll m){
+ll sum=0;
+ll cnt=1;
+for(ll i=0;i<n;i++){
+
+if(sum+a[i]>val){
+sum=a[i];
+cnt++;
+if(cnt>m){
+  return 0;
+}
+}
+else{
+sum+=a[i];
+}
+}
+return 1;
+}
+int main(){
+ll n,m;
+cin>>n>>m;ll a[n];
+ll sum=0;
+f(i,0,n){
+  cin>>a[i];
+  sum+=a[i];
+}
+
+ll l=a[n-1],r=sum;
+
+while(l<r){
+//cout<<endl<<endl<<endl;
+ll mid=l+(r-l)/2;
+//cout<<" mid "<<l<<" "<<r<<" "<<mid<<endl;
+if(fun(a,n,mid,m)){
+  r=mid;
+}
+else{
+  l=mid+1;
+}
+}
+if(!fun(a,n,l,m)){
+  cout<<r<<endl;
+}
+else{
+  cout<<l<<endl;
+}
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>binary_search(ex-1)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

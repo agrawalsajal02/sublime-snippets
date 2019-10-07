@@ -1,0 +1,103 @@
+<snippet>
+    <content><![CDATA[//https://www.spoj.com/problems/INVCNT/
+/*
+a)
+using merge sort
+https://ide.codingblocks.com/s/96578
+
+*/
+
+//b)using fenwick tree
+
+/*just store the element and index in pair and after that sort pair in decreasing order with respect to first element
+and then we have to just find the values of indexes which are smaller then the ith indexe keep the count and sum it simple BIT AC in one go 
+*/
+/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll i=a;i<b;i++)
+#define mod 1000000007
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define endl '\n'
+//point update
+//to update a i value , that we have aready seen
+ll *bit=new ll[10000000];
+void update(ll i,ll inc,ll n){
+while(i<=n){
+    bit[i]+=inc;
+    i=i+(i&(-i));
+}
+}
+
+//range query
+//cummilative sum from 1 to i-1 fro checking for i which of these we have already seen while
+//traversing backwards
+ll query(ll i,ll n){
+    ll sum=0;
+    while(i>0){
+sum=sum+bit[i];
+i=i-(i&(-(i)));
+    }
+return sum;
+}
+int main(){
+    ll t;
+    cin>>t;
+    while(t--){
+ll n;
+cin>>n;ll a[n+1];
+ll mx;
+for(ll j=1;j<=n;j++){
+    cin>>a[j];
+if(j==1){
+ mx=a[j];
+}
+if(a[j]>mx){
+    mx=a[j];
+}
+}
+//size=mx;
+for(ll x=0;x<=mx+1;x++){
+
+    bit[x]=0;
+}
+
+
+
+ll inc=0;
+for(ll i=n;i>=1;i--){
+    inc+=query(a[i]-1,n);
+//update kyoki muje i mil gya he , peehe wale no ko bata saku
+    update(a[i],1,mx);
+
+}
+
+cout<<inc<<endl;
+
+
+
+    }}
+
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fenwick_tree(inversion_count)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

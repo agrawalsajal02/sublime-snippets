@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[//hash map
+//string --> gives list of string
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+template <class T>
+class graph{
+unordered_map<T,list<T> >m;
+//can use map<T,list<T> >m;
+public:
+graph(){
+  //nothing require because i can enter as many entries as i want
+
+}
+void addedge(T u,T v,bool bidec=true){
+  m[u].push_back(v);
+  if(bidec){
+    m[v].push_back(u);
+  }
+}
+void print(){
+  for(auto x:m){
+    cout<<(x.first)<<" -> ";
+    for(auto y:x.second){
+      cout<<y<<",";
+    }cout<<endl;
+  }
+}
+
+void bfs(T a){
+map<T,bool>visited;
+visited[a]=true;
+queue<T>q;
+q.push(a);
+while(!q.empty()){
+    T t=q.front();
+    cout<<t<<" , "<<endl;
+    q.pop();
+    for(T x:(m[t])){
+        if(visited[x]==false){
+            q.push(x);
+        visited[x]=true;
+    }
+    }
+}
+}
+
+void prin(){
+for(auto x:m){
+    cout<<x.first<<" -> ";
+    for(auto y:x.second){
+        cout<<y<<" , ";
+    }
+    cout<<endl;
+}
+}
+};
+int main(){
+/*
+graph<ll>g(5);
+g.addedge(0,1);
+g.addedge(0,4);
+g.addedge(4,3);
+g.addedge(1,4);
+g.addedge(1,2);
+g.addedge(2,3);
+g.prin();
+*/
+graph<string>g;
+g.addedge("modi","yogi");
+g.addedge("modi","trump");
+g.addedge("trump","koti");
+g.addedge("koti","yogi");
+g.addedge("yogi","milan");
+g.addedge("trump","milan");
+g.prin();
+cout<<endl;
+g.bfs("modi");
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-3(Bfs_using_class)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

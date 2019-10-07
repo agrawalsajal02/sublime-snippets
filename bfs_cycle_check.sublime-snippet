@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+vector<ll>v[100000];
+bool visi[100000];
+ll parent[100000];
+bool iscyclicbfs(ll node){
+visi[node]=1;
+parent[node]=-1;
+queue<ll>q;q.push(node);
+while(!q.empty()){
+    ll temp=q.front();q.pop();
+    for(ll i=0;i<v[temp].size();i++){
+     if(visi[v[temp][i]]&&(parent[temp]!=v[temp][i])){
+        return true;
+     }
+    else if(!visi[v[temp][i]]){
+        q.push(v[temp][i]);
+        visi[v[temp][i]]=1;
+        parent[v[temp][i]]=temp;
+     }
+    }
+}
+return false;
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>bfs_cycle_check</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

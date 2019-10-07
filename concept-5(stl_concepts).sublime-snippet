@@ -1,0 +1,57 @@
+<snippet>
+    <content><![CDATA[///for min
+*max_element(v.begin(),v.end());
+
+//for next lexoga permutation of container
+//same as prev_permutation
+while(next_permutation(v.begin(),v.end())){
+
+f(i,0,v.size()){
+  cout<<v[i]<<" ";
+}
+cout<<endl;
+}
+
+
+
+
+//to compare two container lexo , true then 1st is smaller than second
+lexicographical_compare (InputIterator1 first1, InputIterator1 last1,
+                                InputIterator2 first2, InputIterator2 last2
+
+
+
+
+
+//remove element in range
+//uniary predicate
+bool predicate(ll n){
+if(n>1&&n<5){
+  return true;
+}
+return false;
+}
+
+remove_if(v.begin(),v.end(),predicate);
+f(i,0,v.size()-2){
+  cout<<v[i]<<" ";
+}
+
+
+
+
+///
+v.remove(it1,it2)  //to remove range
+v.remove(it1); //where it1 is single lement to be removed
+
+
+
+
+//to compy in reverse , but it removes the original vectr v
+reverse_copy(v.begin(),v.end(),v2.begin());
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>concept-5(stl_concepts)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

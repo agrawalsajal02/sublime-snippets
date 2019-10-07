@@ -1,0 +1,36 @@
+<snippet>
+    <content><![CDATA[//factorial n possible cases
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void permutation(char * s,ll i){
+//base case
+    
+if(s[i]=='\0'){
+    //imagine if there is null string , just print and return
+    cout<<s<<endl;
+    return;
+}
+for(ll j=i;s[j]!='\0';j++){
+swap(s[j],s[i]);
+permutation(s,i+1);
+//backtracking to restore original array
+swap(s[j],s[i]);
+}
+
+}
+int main(){
+
+char s[4]="abc";
+permutation(s,0);
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>permutation</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

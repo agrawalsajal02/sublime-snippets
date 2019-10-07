@@ -1,0 +1,62 @@
+<snippet>
+    <content><![CDATA[ll cc=1000000000;
+vector<pair<ll,ll> >v[1000001];
+ll dis[1000001];
+ll par[100100];
+bool vis[1000001];
+void dijkstra(ll p,ll n){
+f(i,0,n+1){
+  vis[i]=0;
+  dis[i]=INT_MAX;
+  par[i]=-1;
+}
+dis[p]=0;
+set< pair< ll,ll >  >s;
+s.insert({0,p});
+f(i,0,n){
+    if(i!=p){
+        s.insert({INT_MAX,i});
+    }
+}
+while(!s.empty()){
+auto u=*(s.begin());
+s.erase(s.begin());
+ll from=u.se;
+vis[from]=1;
+for(auto it:v[from]){
+ll to=it.fi;
+if(dis[to] > dis[from] + it.se && !vis[to] ){
+   s.erase({dis[to],to}); 
+dis[to] = dis[from] + it.se;
+s.insert({dis[to],to});
+ par[to]=from;
+
+}
+}
+}
+
+if(vis[n-1]==0){
+  cout<<"-1"<<endl;
+  return;
+}
+else{
+ vector<ll>v;
+ll temp=n-1;
+while(temp!=-1){
+v.pb(temp);
+temp=par[temp];
+}
+reverse(v.begin(),v.end());
+  f(i,0,v.size()){
+cout<<v[i]+1<<" ";
+  }
+}
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>graph-20(dijkstra(set_cp))</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,59 @@
+<snippet>
+    <content><![CDATA[
+
+//segmented seive
+ll prime2[1000000];
+void helper(ll n){
+prime2[2]=1;
+prime2[1]=0;
+prime2[0]=0;
+    memset(prime2,1,sizeof(prime2));
+
+for(ll i=4;i<=n;i=i+2){
+    prime2[i]=0;
+}
+for(ll i=3;i<=n;i=i+2){
+if(prime2[i]){
+for(ll j=i*i;j<=n;j=j+2*i){
+     prime2[i]=0;
+}
+
+}
+}
+}
+void seg_seive(ll a,ll b){
+//seive for1 to root b
+    helper(sqrt(b));
+
+bool sec_arr[b-a+1];
+memset(sec_arr,1,sizeof(sec_arr));
+for(ll i=2;i*i<=b;i++){
+    if(prime2[i]){
+    for(ll j=a;j<=b;j++){
+        if(j==i){
+            continue;
+         //   for overlapping of both array
+        }
+      if(j%i==0){
+        sec_arr[j-a]=0;
+      }
+    }
+}
+}
+ll res=0;
+for(ll x=a;x<=b;x++){
+    res+=sec_arr[x-a];
+    if(sec_arr[x-a]){
+        cout<<x<<" ";
+    }
+}
+cout<<endl;
+cout<<" total no of prime "<<res<<endl;
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>prime-generation_in_range_nsquare</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

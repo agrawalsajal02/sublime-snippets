@@ -1,0 +1,80 @@
+<snippet>
+    <content><![CDATA[//strongly connected component(print all scc on graph)
+//it take any two vertices , if there is path from u to v then there is apth form v to u also
+//then graph is called strongly connected component
+//kosaraju algo
+///based on finishing time of nodes
+//basically first stores a address of links from source to sink , then transpose the graph and finding wayto sink ot source
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[100000];
+vector<ll>trans[100000];
+bool visi[1000000];
+//make stack and store node on its finising time
+stack<ll>s;
+void dfs(ll a){
+  visi[a]=1;
+  for(auto file:v[a]){
+    if(!visi[file]){
+      dfs(file);
+    }
+  }
+}
+
+
+void trans_dfs(ll a){
+  visi[a]=1;
+  cout<<" "<<a<<" ";
+  for(auto file:trans[a]){
+    if(!visi[file]){
+      trans_dfs(file);
+    }
+  }
+}
+
+int main(){
+ll n,m;
+cin>>n>>m;
+for(ll i=0;i<m;i++){
+  ll x,y;cin>>x>>y;
+  v[x].push_back(y);
+ trans[y].push_back(x);
+   }
+
+f(i,0,n+1)visi[i]=0;
+dfs(0);   cout<<endl;
+
+//check if it is possible to reach all vertices by ablove dfs or not
+f(i,0,n){
+  if(visi[i]==0){
+cout<<" not a scc component "<<endl;exit(0);
+  }
+}
+
+//make transpose of graph
+//already done
+
+f(i,0,n+1){visi[i]=0;}cout<<endl;
+trans_dfs(0);
+f(i,0,n){
+  if(visi[i]==0){
+cout<<" not a scc component "<<endl;exit(0);
+  }
+}
+cout<<" it is a scc component "<<endl;
+
+/*
+
+3 3
+0 1
+1 2
+2 0
+*/
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>graph-24(checking_scc_compo)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

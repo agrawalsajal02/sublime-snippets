@@ -1,0 +1,167 @@
+<snippet>
+    <content><![CDATA[//fluery algorithm 
+//time complxicity o((v+e)^2)
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define pb push_back
+#define f(i,a,b) for(ll (i)=a;(i)<(b);(i)++) 
+vector<ll>v[100000];
+bool visited[100000];
+ll cnt=0;
+void dfs(ll a){
+  visited[a]=1;
+  cnt++;
+  for(ll i=0;i<v[a].size();i++){
+if(visited[v[a][i]]==0){
+  dfs(v[a][i]);
+  }
+}
+}
+void remove(ll a,ll b){
+  auto it=find(v[a].begin(),v[a].end(),b);
+  v[a].erase(it);
+ it=find(v[b].begin(),v[b].end(),a);
+  v[b].erase(it);
+   
+}
+void printeulercycle(ll var,ll n){
+
+if(v[var].size()==0){
+return; 
+}
+if(v[var].size()==1){
+  cout<<var<<" --> "<<v[var][0]<<endl;
+remove(var,v[var][0]);
+ll ne=v[var][0];
+printeulercycle(ne,n);  
+}
+
+else{
+  for(ll i=0;i<v[var].size();i++){
+ll u= var;
+ll vv= v[var][i] ;
+//first find dfs to calculte no nodes reachable from 
+cnt=0;
+f(j,0,n+1){visited[j]=0;}
+dfs(var);ll cn1=cnt;
+
+remove(u,vv);
+
+
+cnt=0; 
+f(j,0,n+1){visited[j]=0;}
+dfs(var);ll cn2=cnt;
+if(cn1==cn2){
+  cout<<u<<" --> "<<vv<<endl;
+ printeulercycle(vv,n); 
+}
+else{
+v[vv].pb(u);
+v[u].pb(vv);
+  continue;
+}
+  }
+}
+
+}
+int main(){
+
+//to print euler we basic assumtion that it is euler path or euler graph;
+
+
+ll var=1;// val=1 for eulr cycle , and val 2 for euler path
+
+ll n,e;
+cin>>n>>e;
+for(ll i=0;i<e;i++){
+  ll a,b;
+  cin>>a>>b;
+  v[a].pb(b);
+  v[b].pb(a);
+} 
+
+for(ll i=0;i<n;i++){
+  if(v[i].size()%2==1){
+ var=2;
+    break;
+  }
+ }
+
+
+
+
+ //considerring correct euler path or cycle
+ if(var==1){
+//start from any vertices if it is a euler tour
+//let us start form 0
+
+
+  printeulercycle(0,n);
+
+ }
+ else{
+for(ll i=0;i<n;i++){
+  if(v[i].size()%2==1){
+  printeulercycle(i,n);
+    break;
+  }
+ }
+
+}
+
+
+/*
+5 6
+0 1
+1 2
+0 2
+2 3
+2 4
+3 4
+
+
+ans:-
+0 --> 1
+1 --> 2
+2 --> 4
+4 --> 3
+3 --> 2
+2 --> 0
+
+*/
+
+
+
+
+ /*
+5 9
+0 1
+1 2
+0 2
+2 3
+2 4
+3 4
+3 5
+3 6
+5 6
+
+
+0 --> 1
+1 --> 2
+2 --> 4
+4 --> 3
+3 --> 6
+6 --> 5
+5 --> 3
+3 --> 2
+2 --> 0
+
+ */
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>euler_graph_print(fluery_algo)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

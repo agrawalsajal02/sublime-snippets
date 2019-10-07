@@ -1,0 +1,90 @@
+<snippet>
+    <content><![CDATA[//prims algo
+        //TC (V+E)LOGV
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll find_min_vertex(ll *weight,bool *visited,ll n){
+ll min_Verti=-1;
+for(ll i=0;i<n;i++){
+  if(((weight[i]<weight[min_Verti])||(min_Verti==-1))&&(!visited[i]) ){
+min_Verti=i;
+  }}
+return min_Verti;}
+void prims(ll **edge,ll n){
+bool *visited=new bool[n];
+ll *parent=new ll[n];
+ll *weight=new ll[n];
+for(ll x=0;x<n;x++){
+ visited[x]=false;weight[x]=INT_MAX;   
+}
+parent[0]=-1;weight[0]=0;
+for(ll i=0;i<n;i++){
+     ll min_Verti=find_min_vertex(weight,visited,n);
+visited[min_Verti]=true;
+for(ll x=0;x<n;x++){
+  if((!visited[x])&&(edge[min_Verti][x]!=0)){
+ if((edge[min_Verti][x]<weight[x])){
+  weight[x]=edge[min_Verti][x];
+  parent[x]=min_Verti;
+ }   
+}
+}}
+
+for(ll i=1;i<n;i++){
+    if(parent[i]<i){
+        cout<< parent[i]<<"  "<<i<<" "<<weight[i]<<endl;
+    }
+    else{
+     cout<<"  "<<i<<"  "<< parent[i]<<" "<<weight[i]<<endl;
+
+    }
+
+
+}
+
+for(ll i=0;i<n;i++){
+
+}
+
+/* 
+
+
+0 3 6
+1 2 6
+0 1 7
+
+*/
+}
+
+
+
+int main(){
+ll n,e;cin>>n>>e;
+ll **edge=new ll*[n];
+for(ll i=0;i<n;i++){
+  edge[i]=new ll[n];
+  for(ll x=0;x<n;x++){
+   edge[i][x]=0;   
+  }
+}
+for(ll i=0;i<e;i++){
+  ll a,b,c;
+  cin>>a>>b>>c;a--;b--;
+  edge[a][b]=c;
+  edge[b][a]=c;
+}
+prims(edge,n);
+for(ll i=0;i<n;i++){
+  delete []edge[i];
+}
+delete[] edge;
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-13(PRIMS_ALG)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

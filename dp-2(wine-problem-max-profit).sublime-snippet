@@ -1,0 +1,106 @@
+<snippet>
+    <content><![CDATA[//wine problem
+//maximum profit from the sales of wine
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll cnt=0;
+ll memo[1000][1000];
+ll solve(ll a[],ll n,ll i,ll year){
+//cout<<" he "<<i<<" "<<n<<endl;
+cnt++;
+if(i>n){
+    //invalid range , therfore no profit
+return 0;
+}
+/*if(memo[i][n]!=-1){
+    return memo[i][n];
+}*/
+ll val1=a[i]*year+solve(a,n,i+1,year+1);
+ll val2=a[n]*year+solve(a,n-1,i,year+1);
+memo[i][n]=max(val1,val2);
+return memo[i][n];
+
+}
+
+//dp solution
+//very very important
+ll maxproft(ll arr[],ll n){
+ll dp[100][100]={0};
+ll year=n;
+for(ll i=0;i<n;i++){
+    dp[i][i]=year*arr[i];    
+}
+year--;
+//sliding window
+//2 year me 4 length ki bottle
+//1 year me 5 len ki bottle
+//5 year me length ki bottle
+for(ll len=2;len<=n;len++){
+    ll srt=0;
+    ll end=n-len;
+    while(srt<=end){
+ll endwindow=srt+len-1;
+dp[srt][endwindow]=max(
+
+arr[srt]*year+dp[srt+1][endwindow],
+arr[endwindow]*year+dp[srt][endwindow-1]
+    );
+srt++;
+    }
+    year--;
+}
+
+for(ll x=0;x<n;x++){
+ for(ll w=0;w<n;w++){
+     cout<<setw(3)<<dp[x][w]<<" ";   
+    }   
+    cout<<endl;
+}
+cout<<endl<<endl;
+return dp[0][n-1];
+}
+int main(){
+ll n;
+cin>>n;
+ll a[n];
+for(ll x=0;x<n;x++){
+ cin>>a[x];   
+}
+//memset(memo,-1,sizeof(memo));
+//cout<<solve(a,n-1,0,1)<<endl;
+cout<<cnt<<endl;
+
+cout<<maxproft(a,n);
+
+/*
+for(ll x=0;x<n;x++){
+ for(ll w=0;w<n;w++){
+     cout<<memo[x][w]<<"  ";   
+    }  
+    cout<<endl;
+}
+*/
+/*
+input
+4
+1 4 2 3
+
+gives:-29
+
+5
+2 3 5 1 4
+
+gives(50) {greedy :-49};
+
+
+*/
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-2(wine-problem-max-profit)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+        inline void clear(int n){
+    cnt = -1;
+    f(i ,1, n+1){
+        v[i].clear();
+        in[i] = 0;
+        out[i] = 0;
+       // v2[i] = 0; 
+    }
+    dfs_order.clear();
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dfs_order(clear)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

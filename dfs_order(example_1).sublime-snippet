@@ -1,0 +1,170 @@
+<snippet>
+    <content><![CDATA[//https://www.codechef.com/COHA2019/problems/AASHRAM
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[1000000];
+ll in[1000000];
+ll out[1000000];ll cnt=0;
+ll lazy[1000000]={0};
+vector<ll>v2;
+void dfs(ll n,ll par){
+in[n]=++cnt;
+v2.push_back(n);
+for(auto val :v[n]){
+  if(par!=val){
+    dfs(val,n);
+  }
+}
+out[n]=cnt;
+
+}
+void build(ll *a,ll st,ll ed,ll *tree,ll index){
+if(st==ed){
+  //building on preorder trivarsal of tree on array of segment tree with weight
+  tree[index]=a[v2[st-1 ]];
+  return;
+}
+ll mid=(st+ed)/2;
+build(a,st,mid,tree,2*index);
+build(a,mid+1,ed,tree,2*index+1);
+
+tree[index]=(tree[2*index]+tree[2*index+1]);
+
+}
+
+ll query_lazy(ll *tree,ll st,ll ed,ll qe,ll qr,ll index){
+//first resolve lazy value(oending updates)
+/*if(lazy[index]!=0){
+tree[index]+=lazy[index];
+if(st!=ed){
+    lazy[2*index]+=lazy[index];
+    lazy[2*index+1]+=lazy[index];
+}
+lazy[index]=0;
+}
+
+*/
+//for noverlap
+if(st>qr||ed<qe){
+    return 0;
+}
+
+
+//then check for overlap
+if(st>=qe&&ed<=qr){
+    return tree[index];
+}
+
+
+ll mid=(st+ed)/2;
+ll left=query_lazy(tree,st,mid,qe,qr,2*index);
+ll right=query_lazy(tree,mid+1,ed,qe,qr,2*index+1);
+
+return (left+right);
+}
+
+
+void updaterange(ll *tree,ll st,ll ed,ll us,ll ue,ll incr,ll index){
+  //Out of bounds 
+if(ed<us||st>ue){
+  return;
+}
+    // Leaf Node 
+if(st==ed){
+tree[index]+=incr;
+return ;
+}
+  // Left and Right  Call Otherwise 
+ll mid=(st+ed)/2;
+updaterange(tree,st,mid,us,ue,incr,2*index);
+updaterange(tree,mid+1,ed,us,ue,incr,2*index+1);
+//we can add here moe ontimization but it is not very useful
+tree[index]=(tree[2*index]+tree[2*index+1]);
+return;
+}
+
+
+int main(){
+ll n,m;
+cin>>n>>m;
+ll weight[n+1];
+f(i,1,n+1){
+  cin>>weight[i];
+}
+f(i,0,n-1){
+  ll x,y;
+  cin>>x>>y;
+  v[x].push_back(y);
+  v[y].push_back(x);
+}
+f(i,0,n+2){
+  in[i]=0;out[i]=0;
+}
+ll *tree=new ll[4*n+1];
+f(i,0,4*n+1){
+  tree[i]=0;
+}
+dfs(1,1);
+f(i,0,4*n){
+  lazy[i]=0;
+}
+build(weight, 1,n,tree,1);
+/*
+f(i,1,n+1){
+  cout<<in[i]<<" ";
+}cout<<endl;
+f(i,1,n+1){
+  cout<<out[i]<<" ";
+}cout<<endl;
+
+f(i,1,2*n+1){
+  cout<<tree[i]<<" ";
+}cout<<endl;
+
+f(i,0,n){
+  cout<<v2[i]<<" ";
+}cout<<endl;
+*/
+
+f(i,0,m){
+ll x,y,z;
+cin>>x>>y>>z;
+if(x==1){
+  //update
+  ll st=in[y];
+  ll ed=out[y];
+ll fi=query_lazy(tree,1,n,st,ed,1);
+  if(fi%2==0){
+    updaterange(tree,1,n,st,ed,z,1);
+  }
+  else{
+updaterange(tree,1,n,st,ed,1,1);
+
+  }
+}
+else{
+  ll st=in[y];
+  ll ed=out[y];
+
+ll fi=query_lazy(tree,1,n,st,ed,1);
+  
+   st=in[z];
+ ed=out[z];
+ll se=query_lazy(tree,1,n,st,ed,1);
+  //cout<<(fi)<<" tt "<<(se)<<endl;
+cout<<(fi^se)<<endl;
+  
+  //query
+
+}
+
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dfs_order(example_1)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

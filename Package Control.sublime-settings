@@ -6,10 +6,14 @@
 	"installed_packages":
 	[
 		"CopyWithLineNumbersReloaded",
+		"CppFastOlympicCoding",
 		"Extract Sublime Package",
+		"HTML Minifier",
+		"HTMLAttributes",
 		"Package Control",
 		"PackageResourceViewer",
 		"SublimeAStyleFormatter",
+		"SublimeGDB",
 		"Terminal",
 		"WakaTime"
 	]

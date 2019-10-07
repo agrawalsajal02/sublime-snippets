@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[for (ll k = 1; k <= n; ++k) {
+    for (ll i = 1; i <= n; ++i) {
+        for (ll j = 1; j <= n; ++j) {
+            dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]); 
+        }
+    }
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+ <tabTrigger>graph-20(bellman_ford)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

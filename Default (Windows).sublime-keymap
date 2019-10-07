@@ -1,2 +1,12 @@
 [
+    {
+    "keys": ["ctrl+shift+w"],
+    "command": "toggle_setting",
+    "args": {
+        "setting": "word_wrap"
+    }
+},
+{
+"keys": ["ctrl+n"], "command": "cancel_build" 
+}
 ]

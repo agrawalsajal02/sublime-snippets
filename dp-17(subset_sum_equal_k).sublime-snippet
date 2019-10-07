@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[//find whether there exits a subset in array ,subset sum equal to k
+//https://www.codechef.com/problems/TF01
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+int main(){
+ll t;
+cin>>t;
+while(t--){
+    ll n,sum;
+    cin>>n>>sum;
+    ll a[n];
+    f(i,0,n){
+        cin>>a[i];
+    }
+bool dp[sum+1][n+1];
+f(i,0,n+1){
+    dp[0][i]=true;
+}
+f(i,1,sum+1){
+    dp[i][0]=false;
+}
+
+f(i,1,sum+1){
+    f(j,1,n+1){
+        dp[i][j]=dp[i][j-1];
+        if(i>=a[j-1]){
+            dp[i][j]=dp[i][j]||dp[i-a[j-1]][j-1];
+        } //cout<<dp[i][j]<<" ";
+    }//cout<<endl;
+}
+cout<<dp[sum][n]<<endl;
+
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dp-17(subset_sum_equal_k)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

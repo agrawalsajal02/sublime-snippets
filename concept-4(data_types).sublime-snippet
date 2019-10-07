@@ -1,0 +1,72 @@
+<snippet>
+    <content><![CDATA[char - 1 byte   8 bits
+int - 2 byte    16 bits
+float -4 byte     32 bits
+long - 4 byte    32 bits
+long long -8 byte   64 bits
+double - 8byte     64 bits
+long double - 16 byte    16*16 bits
+
+
+1 byte = 8 bits;
+2powbits=number of digits;
+
+{
+note 
+16 bit comlier - int = 2 byte;
+32 bit compliler int =4 byte;
+}
+
+
+
+2pow10~=10pow3 (1024==1000)
+
+
+
+eg
+
+int (32 bit)---4byte
+means 4*8==32 bits
+therrefore 2 pow 32 is nearly equal to 10 pow 9
+means you can enter 9 digits;
+
+
+for long long you can enter 18 digits
+
+
+
+
+
+
+max size of array 10^6 locally
+and globally 10^8
+
+
+
+
+
+
+/*
+     Estimate of Max N against an order to be used in contest (differ from Online Judge to another)
+                complexity      maximum N
+                O(log(n))       10^18
+                O(N)            100 000 000
+                O(N log N)      40 000 000
+                O(N2)           10 000
+                O(N3)           500
+                O(N4)           90
+                O(2^N)          20
+                O(N!)           11
+*/
+
+
+
+
+
+2 ^ 8  range is equal to 0 to 255 in unsigned
+2 ^ 16 (like 2 byte int) is qual to 0 to 65535 range]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>concept-4(data_types)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

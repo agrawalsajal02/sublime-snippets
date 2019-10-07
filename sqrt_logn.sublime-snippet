@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+ll sqrtll(ll a){
+    ll lo = 0, hi = 1e9+1;
+    while(lo+1 < hi){
+        ll mid = (lo+hi)/2;
+        if(mid*mid <= a)
+            lo = mid;
+        else hi = mid;
+    }
+    return hi;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>sqrt_logn</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

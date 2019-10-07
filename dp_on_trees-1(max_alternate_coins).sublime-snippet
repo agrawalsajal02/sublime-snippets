@@ -1,0 +1,55 @@
+<snippet>
+    <content><![CDATA[#include<iostream>
+#include<vector>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+ll coin[1000];
+vector<ll>v[100000];
+ll dp1[1000];
+ll dp2[1000];
+//dp1 represent that ans of subtree including cuurent root node
+//dp2 represent ans of subtree without including current node
+void dp_on_trees(ll i,ll par){
+ll sum1=0;
+ll sum2=0;
+for( auto val:v[i]){
+  if(val!=par){
+    dp_on_trees(val,i);
+   sum1+=dp2[val];
+   //if i selected root node , then do not have opetion to select the 
+   //child node , therefor dp2 of each of child node
+   sum2+=max(dp1[val],dp2[val]);
+   //if i do not select root node , then i have option to select the child or node 
+   //therefore is max of both
+  }
+}
+dp1[i]=sum1+coin[i];
+dp2[i]=sum2;
+}
+int main(){
+  ll n;
+  cin>>n;
+for(ll i=1;i<n;i++){
+  ll x,y;
+  cin>>x>>y;
+  v[x].push_back(y);
+ v[y].push_back(x);
+   
+}
+f(i,1,n+1){cin>>coin[i];
+dp1[i]=0;
+dp2[i]=0;
+}
+dp_on_trees(1,1);
+
+cout<<max(dp1[1],dp2[1]);
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dp_on_trees-1(max_alternate_coins)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

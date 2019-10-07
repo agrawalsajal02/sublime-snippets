@@ -1,0 +1,74 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll r,c;
+ll dx[]={-1,0,1,0};
+ll dy[]={0,-1,0,1};
+void floodfill(char mat[][50],ll i,ll j,char ch,char color){
+
+if(i<0||j<0||i>=r||j>=c){
+  return ;
+}
+if(mat[i][j]!=ch){
+  //not equal to character which i want to replace
+  return ;
+}
+for(ll x=0;x<r;x++){
+ for(ll w=0;w<c;w++){
+        cout<<mat[x][w];
+    }cout<<endl;   
+}
+mat[i][j]=color;
+for(ll x=0;x<4;x++){
+    floodfill(mat,i+dx[x],j+dy[x],ch,color);
+}
+
+}
+void print(char mat[][50]){
+
+for(ll x=0;x<r;x++){
+ for(ll w=0;w<c;w++){
+        cout<<mat[x][w];
+    }cout<<endl;   
+}
+}
+int main(){
+char input[15][50];
+cin>>r>>c;
+for(ll x=0;x<r;x++){
+ for(ll w=0;w<c;w++){
+        cin>>input[x][w];
+    }   
+}
+cout<<endl<<endl;
+floodfill(input,5,12,'.','r');
+print(input);
+/*
+15 30
+..............................
+.........######...............
+.....#####....###.............
+...##...........###...........
+...##.............#...........
+...##............####.........
+..####...........###..........
+...####............#..........
+....####........#####.........
+..#####...........##..........
+...####...........####........
+...####..........#######......
+...#####........##########....
+.......############...........
+..............................
+.........APPLE................
+
+*/
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-8(floodfill)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

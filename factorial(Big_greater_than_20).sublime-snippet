@@ -1,0 +1,49 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void multiply(ll *a,ll i,ll &n){
+ll carry=0;
+
+for(ll j=0;j<n;j++){
+ll temp=a[j]*i+carry;
+a[j]=temp%10;
+carry=temp/10;
+
+}
+while(carry){
+  a[n]=carry%10;
+  carry=carry/10;
+  n++;
+}
+
+}
+void find_factorial(ll *a,ll n){
+a[0]=1;
+//m is no upto which the before array no is stored
+ll m=1;
+for(ll i=2;i<=n;i++){
+  //no is stores in reverse order
+multiply(a,i,m);
+
+}
+for(ll j=m-1;j>=0;j--){
+  cout<<a[j];
+}
+}
+int main(){
+ll n;
+//cin>>n;
+n=4;
+ll *a=new ll[100000]{0};
+find_factorial(a,n);
+
+
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>factorial(Big_greater_than_20)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

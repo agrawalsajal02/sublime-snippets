@@ -1,0 +1,104 @@
+<snippet>
+    <content><![CDATA[//largest increasinig subsequence
+//top to down is bit tricky
+//elements in non decresing order
+//10 20 6 2 1 5 4 7 8
+//at here dp[i] represent 1+ lis(pre states) such that prev staate value is ammaler orr equal than
+//curr value
+//so at basicall at any i we calulate for every j form 0 to i
+//the final ans is max of all the dp
+//we are not cal.. dp such that for n , max how much we can see , we are cal..
+//that it take the nth elemtn the form previous states how beest we can reach to current stATE
+//F(n) = longest increasing subsequence of sequence 1..n , and the sequence must ends with elementn
+//F(n) = max(len(F(i)) + 1) which 0 <= i < n and array[i] < array[n]
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll longest_inc_subsequnce(ll a[],ll n){
+    ll dp[1000]={};
+    for(ll x=0;x<n;x++){
+     dp[x]=1;   
+    }
+ll best=1;
+    for(ll i=1;i<n;i++){
+     for(ll w=0;w<i;w++){
+            if(a[w]<=a[i]){
+               ll curele=1+dp[w];
+                dp[i]=max(dp[i],curele);
+            }
+        }
+        best=max(best,dp[i]);   
+    }cout<<endl;
+for(ll x=0;x<n;x++){
+    cout<<dp[x]<<" ";
+}cout<<endl;
+    return best;
+}
+int main(){
+
+ll n;
+cin>>n;
+ll a[n];
+for(ll x=0;x<n;x++){
+ cin>>a[x];   
+}
+ll ans=longest_inc_subsequnce(a,n);
+cout<<ans<<endl;
+/*
+10
+10 22 9 33 21 50 41 60 80 6
+
+ans:- 6
+
+5
+3 10 2 1 20
+ans:- 3
+
+
+*/
+
+/*
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+int main(){
+ll t;
+cin>>t;
+while(t--){
+    ll n;
+    cin>>n;
+    ll a[n];
+    f(i,0,n){
+        cin>>a[i]   ;
+    }
+    ll dp[n+1];
+    //imagine 52 62 39 4 , then if take dp[i]=0 , 4 will get 0
+    f(i,0,n){
+        dp[i]=1;
+    }
+ll best=1;
+dp[0]=1;
+    for(ll i=1;i<n;i++){
+        for(ll j=0;j<i;j++){
+            if(a[j]<=a[i]){
+            dp[i]=max(dp[i],1+dp[j]);
+        }
+        }
+    best=max(dp[i],best);
+    }
+    cout<<best<<endl;
+}
+
+
+}
+*/
+}
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-5(longest_inc_subsequnce)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

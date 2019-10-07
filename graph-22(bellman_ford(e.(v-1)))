@@ -1,0 +1,48 @@
+<snippet>
+    <content><![CDATA[//bellmanford algo
+//keep on relaxing all edges  , n-1 times
+//based i=on dp
+//bellman ford algo is used in case of negative weight , it is also 
+//sssp but with time complexity o(v*E) , but  fails to operate in case 
+//of negative cycle , therefore used to detect the negative cycle
+#include<iostream>
+#include<vector>
+using namespace std;
+#define ll long long int
+vector<ll>v[100000];
+int main(){
+ll n,m;
+cin>>n>>m;
+for(ll i=0;i<m;i++){
+    ll a,b,c;
+    cin>>a>>b>>c;
+    a--;
+    b--;
+v[i].push_back(a);
+v[i].push_back(b);
+v[i].push_back(c);
+}
+ll const g=1e5;
+ll dis[g];
+for(ll i=0;i<n;i++){
+    dis[i]=1e18;
+}
+dis[0]=0;
+for(ll i=0;i<n-1;i++){
+    for(ll j=0;j<m;j++){
+        if(dis[v[j][1]] > dis[v[j][0]]+ v[j][2] ){
+            dis[v[j][1]] = dis[v[j][0]]+ v[j][2];
+        }
+    }
+}
+
+for(ll i=1;i<n;i++){
+    cout<<dis[i]<<" ";
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-22(bellman_ford(e.(v-1)))</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,53 @@
+<snippet>
+    <content><![CDATA[//josephus problem
+        //danger on spoj
+//only for when kill every 2
+//n=2powP + l (l<2powp)
+//then wining position is 2*l+1
+//or write n in binary then shift largest bit to lowest side
+//if n is pow of 2 then the person start is going to win
+///f(n,k)=(f(n−1,k)+k)
+//  josephus(n, k) = (josephus(n - 1, k) + k-1) % n + 1
+ // josephus(1, k) = 1
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+int main(){
+string s;
+cin>>s;
+ll no=1*pow(10,(s[3]-48));
+ll ans=(s[0]-48)*(no*10)+(s[1]-48)*no;
+//<<(s[0]-48)<<" "<<(s)<<endl;
+while(ans!=0){
+//cout<<" ans"<<ans<<" ";
+ll val=ans;
+ll i=0;
+ll power=1;
+while(power<val){
+    if((power<<1)>val){
+        break;
+    }
+    power=power<<1;
+}
+
+ll fi=val-power;
+//cout<<" fi "<<fi<<" "<<power<<endl;
+if(fi==0){
+    cout<<1<<endl;
+}
+else{
+    cout<<2*fi+1<<endl;
+}
+
+cin>>s;
+ no=1*pow(10,(s[3]-48));
+ans=(s[0]-48)*(no*10)+(s[1]-48)*no;
+
+}
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>joseph</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

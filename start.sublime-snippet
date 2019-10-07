@@ -2,12 +2,17 @@
     <content><![CDATA[
     ll t;
     cin>>t;
-    for(ll i=0;i<n;i++){
+    while(t--){
 ll n;
 cin>>n;ll a[n];
-for(ll i=0;i<n;i++){
-    cin>>a[i];
-}
+f(i,0,n)cin>>a[i];
+
+
+
+
+
+
+
 
     }
 

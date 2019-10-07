@@ -1,0 +1,123 @@
+<snippet>
+    <content><![CDATA[//longest common subsequence
+//3 things to learn
+//algo
+//backtracking our fial ans
+//space optimized solution of this in o(n)
+#include<bits/stdc++.h>
+using namespace std;
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+
+#define ll long long int
+ll calls=0;
+ll dp[1000][1000];
+//tc:-2pown(exponential)
+ll lcs_re(char inp[],char out[],ll i,ll j,ll m,ll n){
+calls++;
+if(i==m||j==n){
+    return 0;
+}
+if(inp[i]==out[j]){
+    return (1+lcs_re(inp,out,i+1,j+1,m,n));
+}else{
+ return max(
+    lcs_re(inp,out,i+1,j,m,n),lcs_re(inp,out,i,j+1,m,n)
+    );
+
+}
+
+
+}
+ll dpa[100][100]={};
+//dp solution
+ll lcs_Dp(char inp[],char out[],ll m,ll n){
+
+//base case  //adding the space no string at beg
+for(ll x=0;x<=n;x++){
+dpa[0][x]=0;    
+}
+for(ll x=0;x<m;x++){
+dpa[x][0]=0;    
+}
+for(ll i=1;i<=m;i++){
+for(ll j=1;j<=n;j++){
+    //i j wrt to dp table  and we inserted empty string in dp table
+    //so we have to subtract 1 from indeces
+if(inp[i-1]==out[j-1]){
+    dpa[i][j]=dpa[i-1][j-1]+1;
+}
+else{
+dpa[i][j]=max(dpa[i-1][j],dpa[i][j-1]);
+
+}
+
+}
+}
+
+return dpa[m][n];
+}
+int main(){
+
+char inp[100],out[100];
+cin>>inp>>out;
+ll m=strlen(inp);
+ll n=strlen(out);
+//recursive solution
+ll ans=lcs_re(inp,out,0,0,m,n);
+cout<<ans<<endl;
+cout<<" re_calls  "<<calls<<endl;
+cout<<" dp solution "<<endl;
+ll val=lcs_Dp(inp,out,m,n);
+cout<<val<<endl;
+
+//step3
+//backtracking our solution
+
+f(i,0,m+1){
+    f(j,0,n+1){
+        cout<<dpa[i][j]<<" ";
+    }cout<<endl;
+}
+
+char final[val+1];
+final[val]='\0';
+ll p=val;
+ll i=m;
+ ll j=n;
+while(i>=1&&j>=1){
+if(inp[i-1]==out[j-1]){
+final[p-1]=inp[i-1]; 
+p--;i--;j--;
+    }
+    else{
+if(dpa[i-1][j]>dpa[i][j-1]){
+    i--;}
+    else{
+        j--;
+    }
+}
+}
+cout<<final<<endl;
+
+
+
+/*
+nematode
+empty
+
+sol:-3
+
+aggtab
+gxtxtab
+sol:-4
+
+
+
+*/
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp_6(longest_comm_subsequence)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

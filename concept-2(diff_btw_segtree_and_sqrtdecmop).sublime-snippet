@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[I assume you're talking about the RSQ (Range Sum Query) problem where we can change one point at time. I'll talk about this particular problem a little and then go to more general case.
+
+They are not interchangeable.
+Let's assume that you have M retrievals and K updates on N elements.
+If M«K, sqrt-decomposition is better, because it will work in O(MN--v+K) which is less than O((M+K)logN) in that case.
+However, it's more popular to have nearly similar amount of updates and retrievals in competition problems. So, segment tree because much better. For example, if N=1'000'000, then single retrieval with sqrt-decomposition will take ˜1000 operations, while segments tree will need 20 only - 50 times faster!]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>concept-2(diff_btw_segtree_and_sqrtdecmop)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

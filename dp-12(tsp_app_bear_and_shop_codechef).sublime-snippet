@@ -1,0 +1,91 @@
+<snippet>
+    <content><![CDATA[//tsp practice()
+//bear and shop codechef
+//https://www.codechef.com/problems/SHOPTRIP
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll n,k;
+long double dp[(1<<13)][500];
+long double dis[100][100]={0};
+long double calc_dis(pair<ll,ll>p1,pair<ll,ll>p2){
+    long double dx=abs(p1.first-p2.first);
+    long double dy=abs(p1.second-p2.second);
+    return sqrt(dx*dx+dy*dy);
+}
+vector<pair<ll,ll>>shops;
+//visited string , mask
+vector<ll>ingridient;
+long double shoptrip(ll mask,ll idx){
+    //base case//easiest problem to solve
+    if((mask==((1<<k)-1))&&(idx==0)){
+      return 0;
+    }
+    if(dp[mask][idx]!=-1){
+        return dp[mask][idx];
+    }
+    dp[mask][idx]=INT_MAX;
+    for(ll i=0;i<=n;i++){
+        //try to go that shop whose ingridient is not with memset
+        if(((mask|ingridient[i])!=mask)||(i==0)){
+       dp[mask][idx]=min(dp[mask][idx],(dis[idx][i]+shoptrip((mask|ingridient[i]),i)));
+        }
+    }
+    return dp[mask][idx];
+}
+int main(){
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+        string s;
+shops.clear();
+ingridient.clear();
+cin>>n>>k;
+shops.push_back({0,0});
+for(ll j=1;j<=n;j++){
+    ll a,b;
+    cin>>a>>b;
+    shops.push_back(make_pair(a,b));
+    }
+ingridient.push_back(0);
+ll mm=0;
+for(ll x=0;x<n;x++){
+cin>>s;
+reverse(s.begin(),s.end());
+ll temp_mask=0;
+for(ll j=0;j<s.length();j++){
+temp_mask=temp_mask+(1<<j)*(s[j]-'0'); }
+
+mm=mm|temp_mask;
+ingridient.push_back(temp_mask); 
+}
+if(((1<<k)-1)!=mm){
+    cout<<"-1"<<endl;
+    continue;
+}
+memset(dis,0,sizeof(dis));   
+for(ll j=0;j<=n;j++){
+for(ll p=0;p<=n;p++){
+dis[j][p]=calc_dis(shops[j],shops[p]);
+}
+}
+for(ll x=0;x<(1<<k);x++){
+ for(ll w=0;w<=n;w++){
+        dp[x][w]=-1;
+    }   
+}
+
+
+long double ans=shoptrip(0,0);
+cout<<fixed<<setprecision(9)<<ans<<endl;
+}
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-12(tsp_app_bear_and_shop_codechef)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

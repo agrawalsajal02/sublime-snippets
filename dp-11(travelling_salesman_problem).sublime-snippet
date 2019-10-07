@@ -1,0 +1,62 @@
+<snippet>
+    <content><![CDATA[//tsp
+//  n facorial (n pow n) without optimization
+//n square tc wth top to down dp (2pow n * n)in case of using bitsat
+#include<bits/stdc++.h>
+using namespace std;
+#define ll int
+ll n=4;
+ll dis[10][10]={
+  {0,20,42,25},
+  {20,0,30,45},
+  {42,30,0,10},
+  {25,34,10,0}
+};
+//define mask//if all citites has been visited
+ll call=0;
+ll visited_all = (1<<n)-1;
+ll dp[100][100];
+ll tsp(ll mask,ll city){
+//base case
+call++;
+if(mask==visited_all){
+    return dis[city][0];
+}
+if(dp[mask][city]!=-1){
+    return dp[mask][city];
+    //rec case
+}
+ll ma=INT_MAX;
+for(ll i=0;i<n;i++){
+        //do not blunder here , always put bracket when using bitmasking because of precedence issue
+
+    if(((((1<<(i))&mask))==0)){
+if((dis[city][i]!=0)){
+//ll new_mask=(1<<(i))|mask;
+ma=min(ma,dis[city][i]+tsp(((1<<(i))|mask),i));
+
+}}
+
+}
+dp[mask][city]=ma;   
+return ma;
+}
+int main(){
+memset(dp,-1,sizeof(dp));
+/*
+for(ll i=0;i<(1<<n);i++){
+    for(ll j=0;j<n;j++){
+    dp[i][j]=-1
+    }
+}
+*/
+cout<<"Minimun weight hamiltoninun path cost  "<<tsp(1,0)<<endl;
+cout<<" calls "<<call<<endl;
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-11(travelling_salesman_problem)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

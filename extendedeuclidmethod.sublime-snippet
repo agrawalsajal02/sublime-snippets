@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[
+//18x+30y = 6
+        ll x,y,gcd;
+void extendedeuclidmethod(ll a,ll b){
+  if(b==0){
+    x=1;
+    y=0;
+    gcd=a;
+    return;
+  }
+  extendedeuclidmethod(b,a%b);
+ll n_x=y;
+ll n_y=x-(a/b)*y;
+//cout<<n_x<<" "<<n_y<<endl;
+x=n_x;
+y=n_y;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+ <tabTrigger>extendedeuclidmethod</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

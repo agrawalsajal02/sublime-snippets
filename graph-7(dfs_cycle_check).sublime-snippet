@@ -1,0 +1,91 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+
+vector<ll>v[100000];
+bool visi[100000];
+void dfs(ll a){
+visi[a]=true;
+//cout<<a<<" ";
+for(ll i=0;i<v[a].size();i++){
+    if(!visi[v[a][i]])dfs(v[a][i]);
+}
+}
+/*to find single source shortest path
+void find(ll dest){
+    ll temp=dest;
+    while(temp!=-1){
+        cout<<temp<<" <- ";
+        temp=parent[temp];
+          }
+}*/
+/*
+graph clear 
+for (auto& q : v) {
+   q.clear();
+}
+*/
+ll parent[100000];
+    bool iscyclicdfs(ll node){
+        //cout<<node<<" --> "<<endl;
+    visi[node]=true;
+    for(ll i=0;i<v[node].size();i++){
+        
+        if(!visi[v[node][i]]){    
+            parent[v[node][i]]=node;
+            bool cycledetected=iscyclicdfs(v[node][i]);
+            if(cycledetected){
+                return true;
+            }
+        }
+        else if((parent[node]!=v[node][i])){
+            //for already visiteed node and not parent
+            return true;
+        }
+    }
+    return false;
+    }
+
+int main(){
+cout<<" enter the number of vertices and edges"<<endl;
+ll n,e;
+cin>>n>>e;
+for(ll i=0;i<e;i++){
+    ll a,b;
+    cin>>a>>b;
+    v[a].push_back(b);
+    v[b].push_back(a);
+}
+memset(visi,0,sizeof(visi));
+memset(parent,-1,sizeof(parent));
+if(iscyclicdfs(0)){
+    cout<<" cycle is present"<<endl;
+}
+else{
+    cout<<" cycle is not present"<<endl;
+}
+
+for (auto& q : v) {
+   q.clear();
+}
+
+/*
+6 7
+0 1
+0 4
+1 2
+2 4
+4 3
+2 3
+3 5
+
+cycle is oresent
+*/
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-7(dfs_cycle_check)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

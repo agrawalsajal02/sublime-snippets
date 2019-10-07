@@ -1,8 +1,9 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_size": 19,
+	"font_size": 12,
 	"ignored_packages":
 	[
+		"SublimeGDB",
 		"Vintage"
 	],
 	"theme": "Adaptive.sublime-theme",

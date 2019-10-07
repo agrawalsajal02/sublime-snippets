@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[void build(ll *a,ll st,ll ed,ll *tree,ll index){
+if(st==ed){
+  tree[index]=a[st];
+  return;
+}
+ll mid=(st+ed)/2;
+build(a,st,mid,tree,2*index+1);
+build(a,mid+1,ed,tree,2*index+2);
+
+tree[index]=min(tree[2*index+1],tree[2*index+2]);
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>seg_tree(build)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

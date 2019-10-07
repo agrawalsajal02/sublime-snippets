@@ -1,0 +1,62 @@
+<snippet>
+    <content><![CDATA[vector<ll>v[100000];
+bool visited[100000];
+void dfs(ll a){
+visited[a]=1;
+for(ll i=0;i<v[i].size();i++){
+  if(visited[i]!=0){
+    dfs(v[i][a]);
+  }
+}
+}
+bool isallconnected(ll n,ll e){
+ll connectedcomp=0;
+ll flag=0;//flag for if there is ni edge in graph
+for(ll i=0;i<n;i++){
+  if(v[i].size()==0){
+    continue;
+  }
+  flag=1;
+  dfs(i);
+  connectedcomp++;
+}
+if(connectedcomp==1){
+  return 1;
+}
+else if(flag==0){
+ return 1; //graph has no eedge is a euler grph 
+}
+return 0;
+}
+void is_euler(ll n,ll e){
+
+if(!isallconnected(n,e)){
+  cout<<" NOT A EULER GRAPH , graph is not connected "<<endl;
+return;
+}
+
+
+ll cnt=0;
+for(ll i=0;i<n;i++){
+  if(v[i].size()%2==0){
+    continue;
+  }
+  cnt++;
+}
+if(cnt==2){
+  cout<<" EULER Path "<<endl;
+  return ;
+}
+else if(cnt==0){
+cout<<" EULER GRAPH "<<endl;
+}
+else{
+  cout<<" NOT A EULER GRAPH "<<endl;
+}
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>euler_graph_check</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

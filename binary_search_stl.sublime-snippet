@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[if (binary_search(a, a + 10, 10)) 
+        cout << "\nElement found in the array";
+
+         cout << lower_bound(arr1.begin(), arr1.end(), 20)  
+            - arr1.begin();  
+        ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>binary_search_stl</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

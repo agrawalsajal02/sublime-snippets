@@ -1,0 +1,104 @@
+<snippet>
+    <content><![CDATA[//range update and point query
+//uses  two update from a for +v then from b+1 fro -v
+//https://www.spoj.com/problems/UPDATEIT/
+/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+#define mod 1000000007
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define endl '\n'
+#define PRI(x) cerr<<#x<<'='<<x<<endl;
+#define all(con) con.begin(),con.end()
+#define sz(x) ((long long)x.size())
+ll bit[100000]={0};
+void update(ll i,ll n,ll inc){
+while(i<=n){
+    bit[i]+=inc;
+    i=i+(i&(-i));
+}
+
+}
+
+ll query(ll i){
+ll sum=0;
+while(i>0){
+    sum+=bit[i];
+    i=i-(i&(-i));
+}
+return sum;
+}
+
+int main(){
+   
+       ios_base::sync_with_stdio(false);
+       cin.tie(NULL);
+       
+    ll t;
+    cin>>t;
+    while(t--){
+        for(ll x=0;x<=10000;x++){
+            bit[x]=0;
+        }
+ll n,u;
+cin>>n>>u;ll a[n+1]={0};
+while(u--){
+
+ll x,y,z;
+cin>>x>>y>>z;
+x++;
+y++;
+
+
+update(x,n,z);
+
+update(y+1,n,-z);
+
+}
+ll q;
+cin>>q;
+while(q--){
+ll x;
+cin>>x;x++;
+cout<<query(x)<<endl;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+    }
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fenwick_tree(range_update_point_query)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

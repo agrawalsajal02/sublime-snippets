@@ -1,0 +1,54 @@
+<snippet>
+    <content><![CDATA[//dp question
+//Given an array A1, A2, ..., AN, count the number of subarrays of array A which are non-decreasing.
+//https://www.codechef.com/problems/SUBINC
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main(){
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+ll n;
+cin>>n;
+ll a[n];
+for(ll j=0;j<n;j++){
+    cin>>a[j];
+}
+if(n==1){
+  cout<<"1"<<endl;
+  continue;
+}
+ll dp[n+1];
+dp[0]=1;
+ll p=2;
+for(ll j=1;j<n;j++){
+    if(a[j]>=a[j-1]){
+    //cout<<dp[j-1]<<" he "<<p<<endl;
+    dp[j]=dp[j-1]+p;
+    //cout<<dp[j]<<" j  "<<j<<endl;
+    p++;
+    continue;
+    }
+dp[j]=dp[j-1]+1;
+     // cout<<dp[j]<<" j  "<<j<<endl;
+    p=2;
+
+}
+ll cou=0;
+cout<<dp[n-1]<<endl;
+
+
+    }
+
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-practice(count_subarray_with_non_decre)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,63 @@
+<snippet>
+    <content><![CDATA[/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll i=a;i<b;i++)
+#define mod 1000000007
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define endl '\n'
+ll a[10000];
+ll bit[10000]={0};
+void update(ll i,ll no,ll n){
+while(i<=n){
+    bit[i]=max(bit[i],no);
+    i=i+(i&(-i));
+}
+}
+
+ll query(ll i){
+ll sum=0;
+while(i>0){
+sum=max(bit[i],sum);
+   i=i-(i&(-i));
+}
+return sum;
+}
+int main(){
+ll n,q;
+cin>>n>>q;
+
+f(i,1,n+1){
+cin>>a[i];
+update(i,a[i],n);
+}
+while(q--){
+    ll x;
+    cin>>x;
+   cout<<query(x)<<endl;
+}
+
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>fenwick_tree(prefix_max)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

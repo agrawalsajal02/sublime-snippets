@@ -1,0 +1,28 @@
+<snippet>
+    <content><![CDATA[
+void updaterange(ll *tree,ll st,ll ed,ll us,ll ue,ll incr,ll index){
+  //Out of bounds 
+if(ed<us||st>ue){
+  return;
+}
+    // Leaf Node 
+if(st==ed){
+tree[index]+=incr;
+return ;
+}
+  // Left and Right  Call Otherwise 
+ll mid=(st+ed)/2;
+updaterange(tree,st,mid,us,ue,incr,2*index+1);
+updaterange(tree,mid+1,ed,us,ue,incr,2*index+2);
+//we can add here moe ontimization but it is not very useful
+tree[index]=min(tree[2*index+1],tree[2*index+2]);
+
+return;
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>seg_tree(update_range)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

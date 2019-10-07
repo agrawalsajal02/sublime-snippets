@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[ll rev(ll n){
+    ll su=0;
+    ll i=1;
+while(n>0){
+    ll va=n%10;
+    su=su*10+va;
+    //i=i*10;
+    n=n/10;
+}
+return su;
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>reversenumber</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+        typedef uintmax_t ll;
+typedef __int128 ul;
+
+/*
+sublime not supported
+//BABURAO
+#include <bits/stdc++.h>
+#include<cstdint>
+using namespace std;
+typedef uintmax_t ll;
+typedef __int128 ul;
+
+const ll MOD=1e9+7;
+
+int main() 
+{
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,k;
+        cin>>n>>k;
+        ul t1=k-1;
+        ul t2=n-1;
+        ul num=((t1/t2)+1)%MOD;
+        ul ans=((num*(t1+t1+(num-1)*-t2))/2)%MOD;
+        cout<<(ll)ans<<endl;
+    }
+    return 0;
+}
+*/
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>long-long-long-int(128bit)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

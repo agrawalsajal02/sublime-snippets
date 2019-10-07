@@ -1,0 +1,138 @@
+<snippet>
+    <content><![CDATA[//it is a greedy approch
+//if graph is dense then matrix is better , v square
+//if graph is sparse the , adjacency list is beeter , elogv
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector< pair<ll,ll> >v[100000];
+ll find_min(ll dist[],ll n,ll visi[]){
+ll ans=-1;
+for(ll i=0;i<n;i++){
+if((ans==-1||ans>dist[i])&&visi[i]==0){
+    ans=i;
+}
+}
+return ans;
+}
+void dijkstra_nsq(ll **dp,ll n,ll m,ll src){
+ll dist[n];
+ll visi[n];
+ll parent[n];
+f(i,0,n){
+    dist[i]=INT_MAX;
+    visi[i]=0;
+    parent[i]=-1;
+}
+dist[src]=0;
+
+f(i,0,n){
+ ll mini=find_min(dist,n,visi);
+ visi[mini]=1;
+ f(j,0,n){
+    if(dp[i][j]!=0&&visi[j]==0){
+        if(dist[j]>dist[i]+dp[i][j]){
+            dist[j]=dist[i]+dp[i][j];
+        parent[j]=i;
+        }
+    }
+ }
+}
+f(i,0,n){
+    cout<<dist[i]<<" ";
+}
+
+//to backtrack
+ll fin=3;
+while(fin!=-1){
+cout<<fin<<endl;
+    fin=parent[fin];
+} 
+
+}
+
+//second method
+//vlogv +elogv ,, 1 part find mini , 2 part scccess the vector
+void dijkstra2(ll n,ll m,ll src){
+set<pair<ll,ll> >s;
+//does  with set and dist
+/*f(i,0,n){
+    if(i!=src){
+        s.insert({INT_MAX,i});
+    }
+}*/
+ll dist[n];
+f(i,0,n)dist[i]=INT_MAX;
+dist[src]=0;
+s.insert({0,src});
+while(!s.empty()){
+ auto pp=*(s.begin());
+ s.erase(s.begin());
+ ll from=pp.second;
+ for(auto val:v[from]){
+    ll to=val.first;
+if(val.second+dist[from]<dist[to]){
+    s.erase({dist[to],to});
+dist[to]=val.second+dist[from];
+s.insert({dist[to],to});
+ }   
+}
+}
+
+f(i,0,n){
+    cout<<dist[i]<<" ";
+}
+}
+int main(){
+ll n,m;
+/*cin>>n>>m;
+ll **dp=new ll*[n];
+
+f(i,0,n){
+    dp[i]=new ll[n];
+    f(j,0,n){
+        dp[i][j]=0;
+    }
+}
+
+
+//normal implemetaion n square 
+f(i,0,m){
+ll x,y,z;
+cin>>x>>y>>z;
+dp[x][y]=z;
+
+dp[y][x]=z;
+//if directed
+}
+
+dijkstra_nsq(dp,n,m,0);
+
+f(i,0,n){
+delete []dp[i];  
+}
+
+delete [] dp;
+
+*/
+
+//set implementation
+//ll n1;ll m1;
+cin>>n>>m;
+f(i,0,m){
+ll x,y,z;
+cin>>x>>y>>z;
+v[x].push_back({y,z});
+v[y].push_back({x,z});
+}
+
+dijkstra2(n,m,0);
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>graph-40(dijkstra_full_code)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

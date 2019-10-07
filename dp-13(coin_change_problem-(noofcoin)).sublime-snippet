@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[//coin change problem
+//counting no of ways
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll dp[100][100];
+ll calls=0;
+ll count_coin(ll a[],ll n,ll k){
+calls++;
+if(k==0){
+    return 1;
+}
+if(k<0){
+    return 0;
+}
+if(n<=0){
+    return 0;
+}
+if(dp[n][k]!=-1){
+    return dp[n][k]; 
+}
+ll value=count_coin(a,n-1,k)+count_coin(a,n,k-a[n-1]);
+dp[n][k]=value;
+return value;
+}
+int main(){
+ll n;
+cin>>n;ll a[n];
+for(ll w=0;w<n;w++){
+ cin>>a[w];   
+}
+ll k;
+cin>>k;
+memset(dp,-1,sizeof(dp));
+cout<<count_coin(a,n,k)<<endl<<calls<<endl;
+/*
+ll n;
+cin>>n;
+
+ll a[n+1];
+for(ll x=0;x<n;x++){
+ cin>>a[x];   
+}
+
+ll tot=0;
+cin>>tot;
+//create a matrix of size (n+1)*m
+ll dp[tot+1][n];
+ 
+ //initialzie the base n=0 with 1
+for(ll x=0;x<n;x++){
+    dp[0][x]=1;
+}
+
+f(i,1,tot+1){
+    f(j,0,n){
+ll x= (j>=1)? dp[i][j-1]: 0;
+ll y= (i-a[j]>=0)? dp[i-a[j]][j] : 0;
+dp[i][j]=x+y;
+
+    }
+}
+
+
+f(i,0,tot+1){
+    f(j,0,n){
+cout<<dp[i][j]<<" ";
+}cout<<endl;}
+cout<<dp[tot][n-1]<<endl;
+
+}
+
+
+
+
+
+*/
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-13(coin_change_problem-(noofcoin))</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

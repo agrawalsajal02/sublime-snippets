@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+enum sajal{sun,mon,tue};
+int main(){
+enum sajal ne;
+ne=mon;
+cout<<ne<<endl;
+}
+
+//if sun can be initialized in top  , then next unintialzied will we 
+//just one add]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+   <tabTrigger>enum</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

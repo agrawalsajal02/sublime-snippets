@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[
+        //linear diaphantane equation
+        //poly equat whose integral sol exts of more or equal than 2 var
+//ax+by=c
+  ll a=25,b=15,c=40;
+  if(c%__gcd(a,b)==0){
+ //then only solution possible
+    ll k=c/__gcd(a,b);
+    a=a/__gcd(a,b);
+    b=b/__gcd(a,b);
+  extendedeuclidmethod(a,b);
+if (a < 0) x = -x;
+    if (b < 0) y = -y;
+cout<<k*x<<" "<<k*y<<endl;
+//family of solution
+/*
+x=x1+(b/g)t
+y=y1-(a/g)t
+*/
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+   <tabTrigger>linear_diophantine_equations</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

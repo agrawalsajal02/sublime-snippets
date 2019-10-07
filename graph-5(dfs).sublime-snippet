@@ -1,0 +1,76 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+
+vector<ll>v[100000];
+bool visi[100000];
+void dfs(ll a){
+visi[a]=true;
+//cout<<a<<" ";
+for(ll i=0;i<v[a].size();i++){
+    if(!visi[v[a][i]])dfs(v[a][i]);
+}
+}
+/*to find single source shortest path
+void find(ll dest){
+    ll temp=dest;
+    while(temp!=-1){
+        cout<<temp<<" <- ";
+        temp=parent[temp];
+          }
+}*/
+/*
+graph clear 
+for (auto& q : v) {
+   q.clear();
+}
+*/
+int main(){
+cout<<" enter the number of vertices and edges"<<endl;
+ll n,e;
+cin>>n>>e;
+for(ll i=0;i<e;i++){
+    ll a,b;
+    cin>>a>>b;
+    v[a].push_back(b);
+    v[b].push_back(a);
+}
+memset(visi,0,sizeof(visi));
+for(ll x=0;x<n;x++){
+    if(visi[x]==0){
+        dfs(x);
+    }
+}
+//ll p;cin>>p;
+//cout<<" shortest path is "<<endl;
+//find(p);
+for (auto& q : v) {
+   q.clear();
+}
+/*
+6 7
+0 1
+1 2
+0 4
+2 4
+2 3
+3 5
+3 4
+3
+
+gives:-
+0  1  4  2  3  5 
+
+shortest path is 
+3 <- 4 <- 0 <- 
+
+*/
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-5(dfs)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

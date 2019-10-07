@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[
+ll parent[100000];
+    bool iscyclicdfs(ll node){
+        //cout<<node<<" --> "<<endl;
+    visi[node]=true;
+    for(ll i=0;i<v[node].size();i++){
+        
+        if(!visi[v[node][i]]){    
+            parent[v[node][i]]=node;
+            bool cycledetected=iscyclicdfs(v[node][i]);
+            if(cycledetected){
+                return true;
+            }
+        }
+        else if((parent[node]!=v[node][i])){
+            //for already visiteed node and not parent
+            return true;
+        }
+    }
+    return false;
+    }]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dfs_cycle_check</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

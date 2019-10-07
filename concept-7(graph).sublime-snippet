@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[graphs:-
+1)if ther is n nodes and k conn compo then there is at least n-k edges
+
+2)sum of all nodes degree is even
+
+3)there is  , no of odd degree vertives is always even
+
+
+4)dijkstra do not work in case of negative weight, it may give correct or
+may not give apporch
+
+5)bellman ford algo is used in case of negative weight , it is also 
+sssp but with time complexity o(v*E) , but  fails to operate in case 
+of negative cycle , therefore used to detect the negative cycle
+
+6)floyd warshal algo is all pair shortest path , is dp apporch 
+therework on negative weight , but not on negative cycle
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>concept-7(graph)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

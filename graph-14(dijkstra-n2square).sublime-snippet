@@ -1,0 +1,98 @@
+<snippet>
+    <content><![CDATA[//dijkstra algo in adjancy matrix
+//known as sssp single source shortest path
+//same as prims without obtimization
+//time complexicity o(n square)
+//using priority queue or set can reduce to o((v+e)(logv) `== elogv
+//can work for both directed and undirected
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int findminvertix(int *dis,bool *visited,int n){
+    int minvertix = -1;
+    for(ll i=0;i<n;i++){
+        if((minvertix==-1)&&(!visited[i])){
+            minvertix=i;
+            continue;
+        }
+        if((dis[minvertix]>dis[i])&&(!visited[i])){
+            minvertix=i;
+        }
+    }
+return minvertix;
+}
+void dijkstra(int **edge,int n){
+    int *dis = new int[n];
+    bool * visited= new bool[n];
+    for(ll i=0;i<n;i++){
+        dis[i]=INT_MAX;
+        visited[i]=false;
+    }   dis[0]=0;
+
+    for(ll k=0;k<n-1;k++){
+        int minvertix = findminvertix(dis,visited,n);
+         visited[minvertix]=true;
+         for(ll j=0;j<n;j++){
+            if((edge[minvertix][j]!=0)&&(!visited[j])){
+                int dist = dis[minvertix]+edge[minvertix][j];
+                  if(dist<dis[j]){
+                    dis[j]=dist; }
+             }
+
+
+         }}
+
+    for(ll i=0;i<n;i++){
+        cout<<" i "<<i<<" "<<dis[i]<<" "<<endl;
+    }
+    delete []visited;
+    delete []dis;
+
+
+}
+int main(){
+ll n,e;cin>>n>>e;
+
+int **edge = new int*[n];
+for(int i=0;i<n;i++){
+    edge[i]=new int[n];
+    for(int j=0;j<n;j++){
+
+        edge[i][j]=0;
+    }
+}
+for(ll i=0;i<e;i++){
+    ll a,b,c;cin>>a>>b>>c;
+    edge[a][b]=c;
+    edge[b][a]=c;
+
+}
+cout<<endl;
+    dijkstra(edge,n);
+  for(int i=0;i<n;i++){
+      delete []edge[i];
+    }
+    delete [] edge;
+
+
+/*
+
+4 5
+0 1 1
+0 2 4
+0 3 7
+1 2 1
+2 3 2
+*/
+}
+
+
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-14(dijkstra-n2square)</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

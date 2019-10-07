@@ -1,0 +1,72 @@
+<snippet>
+    <content><![CDATA[//https://ide.codingblocks.com/s/138447
+//sttart with any node and can you visit all nodes without repetation of any nodes
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+vector<ll>v[1000];
+bool check(ll n,bool visited[]){
+ll mila=false;
+f(i,1,n+1){
+  if(!visited[i]){
+    return false;
+  }
+}
+return true;
+}
+bool hamiltonion(ll n,ll e,bool visited[],ll  currverti){
+visited[currverti]=1;
+if(check(n,visited)){
+  return true;
+}
+
+for(auto val: v[currverti]){
+if(!visited[val]){
+  bool vala=hamiltonion(n,e,visited,val);
+  if(vala){
+    return true;
+  }
+
+}
+}
+visited[currverti]=0;
+return false;
+}
+int main(){
+ll t;
+cin>>t;
+while(t--){
+ll n,e;
+cin>>n>>e;
+for(ll i=0;i<e;i++){
+  ll x,y;
+  cin>>x>>y;
+  v[x].push_back(y);
+ v[y].push_back(x);
+   
+}
+bool visited[n+1];
+f(i,0,n+1)visited[i]=0;
+ll mila=false;
+for(ll i=1;i<=n;i++){
+  if(hamiltonion(n,e,visited,i)){
+    mila=true;
+    break;
+  }
+f(i,0,n+1)visited[i]=0;
+
+}
+cout<<mila<<endl;
+for(ll w=0;w<=n;w++){
+  v[w].clear();
+}
+
+}
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>backtracking-4(hamiltonion_path)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

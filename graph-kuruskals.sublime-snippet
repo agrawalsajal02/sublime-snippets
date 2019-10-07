@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[//kruskal's algo
+//time complexity
+//without dsu , kruskals take E.(E+V)+ElogE
+//with dsu without rank obtimization and path compression
+//   it is E.V+ElogE
+//with dsu with rank obtimization only E.logV+ElogE
+//with dsu with both rank obtimization and path compression it is :- E.1+ElogE ~= E+2*ElogV ~= ElogV
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+class edge{
+public:
+  ll u;ll v;
+  ll weight;
+};
+bool comp(edge a,edge b){
+  return (a.weight<b.weight);
+}
+ll findparent(ll *parent,ll i){
+  if(parent[i]==i){
+    return i;
+  }
+  return findparent(parent,parent[i]);
+}
+ll kruskals(edge *ed,edge *output,ll e,ll n){
+
+sort(ed,ed+e,comp);
+ll *parent=new ll[n];
+
+for(ll i=0;i<n;i++){
+  parent[i]=i;
+}
+ll i=0;
+ll count=0;
+while(count!=n-1){
+edge temp=ed[i];
+
+ll sor=findparent(parent,temp.u);
+ll fin=findparent(parent,temp.v);
+if(sor!=fin){
+  //do union
+  output[count]=temp;
+ count++;
+ parent[sor]=fin;
+
+}
+  i++;}
+
+}
+int main(){
+ll n,e;
+cin>>n>>e;
+edge *ed=new edge[e];
+edge *o=new edge[n-1]; 
+
+for(ll i=0;i<e;i++){
+  ll a,b,c;cin>>a>>b>>c;
+a--;  ed[i].u=a;
+ b--; ed[i].v=b;
+  ed[i].weight=c;
+}
+
+kruskals(ed,o,e,n);
+for(ll x=0;x<n-1;x++){
+cout<<o[x].u<<" "<<o[x].v<<" "<<o[x].weight;
+}
+/*
+4 5
+1 2 7
+1 4 6
+4 2 9
+4 3 8
+2 3 6
+
+
+*/
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-12(kruskals)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

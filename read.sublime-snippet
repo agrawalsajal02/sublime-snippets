@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[template <typename T>
+    inline T read() {
+        T x = 0;
+        T multiplier = 1;
+        char ch = getchar();
+        while (ch < '0' || ch > '9') {
+            if (ch == '-') {
+                multiplier = -1;
+            }
+            ch = getchar();
+        }
+        while (ch >= '0' && ch <= '9') {
+            x = (x << 3) + (x << 1) + (ch & 15);
+            ch = getchar();
+        }
+        return x * multiplier;
+    }
+   // b = read<int>()
+     ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>read</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

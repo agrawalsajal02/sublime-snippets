@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+
+void seive2(){
+//o nlog(logn)
+    bool prime[1000];
+    memset(prime,0,sizeof(prime));
+prime[2]=1;
+prime[1]=0;
+for(ll i=3;i<1000;i++){
+    
+    if(i%2==1){
+        prime[i]=1;
+    }
+}
+//first optimisation , checking only the odd numbers , even numbers already cancelled except two
+for(ll i=3;i<1000;i=i+2){
+    if(prime[i]==1){
+       
+       //second optimisation , statring from i square because numbers before i^2 is already cancelled by diveisors before i if they found multiple , therefore no need to check for them  
+    for(ll j=i*i;j<1000;j=j+i){
+        //third optimisation , after i^2 , checking for only odd , since no need to check for een numbers because they are already cancelled as if i^2 is odd and i is odd the i^2+i become even and not need to check , only check for i^2+2*i
+   prime[j]=0;
+        }
+    }
+}
+for(ll i=0;i<1000;i++){
+    if(prime[i]){
+        cout<<i<<" ";
+    }
+}
+prime[0]=0;
+prime[1]=0;
+
+}
+     ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>prime_seive(1 to n generator)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

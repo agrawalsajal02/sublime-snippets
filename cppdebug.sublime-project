@@ -1,0 +1,13 @@
+  {
+ "folders":
+ [
+ {
+ "path": ""
+ }
+ ],
+ "settings":
+ {
+ "sublimegdb_commandline": "gdb -nx -readnow -fullname --interpreter=mi -args ./myfile.cpp",
+ "sublimegdb_workingdir": "${folder:${project_path:C://Users//Dell Indpiron//Desktop//cpp-toolkit-master//cpp-toolkit-master//Sublime_1326//Data//Packages//User//myfile.cpp}}"
+ }
+}

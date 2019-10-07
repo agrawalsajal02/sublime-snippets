@@ -1,0 +1,140 @@
+<snippet>
+    <content><![CDATA[
+        //my first lca problem, very excited
+#include<bits/stdc++.h>
+using namespace std;
+#define ll int
+#define endl '\n'
+#define LG 11
+ll parent[1010][LG];
+vector<ll>v[1010];
+ll level[1010];
+void dfs(ll a,ll par,ll lvl){
+parent[a][0]=par;
+level[a]=lvl;
+for(auto i:v[a]){
+    if(i==par){//to stop the unended recursion
+        continue;
+    }
+  dfs(i,a,lvl+1);
+}
+}
+
+void precompute(ll n){
+for(ll i=1;i<LG;i++){
+for(ll j=1;j<=n;j++){
+    if(parent[j][i-1]){
+    parent[j][i]=parent[parent[j][i-1]][i-1];
+}
+}
+}
+}
+
+ll lca(ll u,ll v){
+if(level[u]<level[v]){
+    swap(u,v);
+}
+ll diff=level[u]-level[v];
+for(ll i=LG-1;i>=0;i--){
+    //1<<i is basically 2 pow i-1 //it means when jump matches with the spliting f diff in binary powers 
+    if((1<<i) & diff){
+        u=parent[u][i];
+    }
+}
+
+if(u==v){
+    return u;
+}
+
+for(ll i=LG-1;i>=0;i--){
+    if(parent[u][i] && (parent[u][i]!=parent[v][i])){
+        u=parent[u][i];
+        v=parent[v][i];
+    }
+}
+
+    
+return parent[u][0];
+
+
+}
+
+
+
+int main(){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    ll t;
+    cin>>t;
+    for(ll i=0;i<t;i++){
+        cout<<"Case "<<i+1<<":"<<endl;
+ll n;
+cin>>n;
+for(ll q=1;q<=n;q++){
+ll a;
+cin>>a;
+if(a==0){
+    continue;
+}
+for(ll j=0;j<a;j++){
+   ll b;cin>>b;
+    v[q].push_back(b);
+    v[b].push_back(q);
+}
+
+
+}
+ll q;cin>>q;
+//step i done
+
+//step 2
+//intilize all the levels
+for(ll z=1;z<=n;z++){
+level[z]=0;
+}
+
+//step 3 initlize all parent
+for(ll x=1;x<=n;x++){
+    for(ll p=1;p<LG;p++){
+        parent[x][p]=0;
+    }
+}
+
+//step 4 dfs
+
+dfs(1,0,0);
+
+
+
+//step 5 precompute
+precompute(n);
+
+for(ll w=0;w<q;w++){
+
+ll a,b;cin>>a>>b;
+cout<<lca(a,b)<<endl;
+
+}
+
+
+for(ll w=0;w<=n;w++){
+  v[w].clear();
+}
+        /*for (auto& q : v) {
+   q.clear();
+}*/
+    }
+
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>lca_spoj_pro</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

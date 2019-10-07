@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+        ll m=2*pow(ceil((log2(n))),2)-1;
+        //or 4n+1 worst case]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>seg_tree_size</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

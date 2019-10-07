@@ -1,0 +1,59 @@
+<snippet>
+    <content><![CDATA[//diameter of tree
+//dp1 represent that max path from root to leaf
+//dp2 represent that a path form leaf to another leaf  via root
+//maximim is our ans
+//but why not take only max of right subtree and left subtree (+1)//
+//think counter example for this for finding a diameter
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+ll coin[1000];
+vector<ll>v[100000];
+ll dp1[1000];
+ll dp2[1000];
+void dp_on_trees(ll i,ll par){
+vector<ll>temp;
+for( auto val:v[i]){
+  if(val!=par){
+    dp_on_trees(val,i);
+ temp.push_back(val);
+  }
+}
+sort(temp.begin(),temp.end());
+if(temp.size()>=1){
+dp1[i]=1+temp.back();
+}
+if(temp.size()>=2){
+dp2[i]=1+1+temp.back()+temp[temp.size()-2]; 
+}
+}
+int main(){
+  ll n;
+  cin>>n;
+for(ll i=1;i<n;i++){
+  ll x,y;
+  cin>>x>>y;
+  v[x].push_back(y);
+ v[y].push_back(x);
+   
+}
+f(i,1,n+1){cin>>coin[i];
+dp1[i]=0;
+dp2[i]=0;
+}
+dp_on_trees(1,1);
+
+cout<<max(dp1[1],dp2[1]);
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dp_on_trees-2(diameter_of_the_tree)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

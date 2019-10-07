@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[long long countWays(int m){
+#define ll int
+
+ll dp[m+1];
+for(ll i=0;i<=m;i++){
+    dp[i]=0;
+}
+dp[0]=1;
+
+for(ll i=1;i<=m;i++){
+    dp[i]+=dp[i-1];
+}
+for(ll i=2;i<=m;i++){
+    dp[i]+=dp[i-2];
+}
+
+return dp[m];
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-14(count_no_of_stairs(only1_2_ordernotmatter))</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

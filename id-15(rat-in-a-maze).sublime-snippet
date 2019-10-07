@@ -1,0 +1,141 @@
+<snippet>
+    <content><![CDATA[//rat in a maze problem
+/*3 problems
+1)is path possible from (1,1) to m,n
+2)count no of possible paths
+3)print all the possible paths
+
+*/
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll q=0;
+bool ratinmaze(char maze[][10],ll sol[][10],ll i,ll j,ll m,ll n){
+if(i==m&&j==n){
+sol[m][n]=1;
+for(ll x=0;x<=m;x++){
+ for(ll w=0;w<=n;w++){
+     cout<<sol[x][w]<<" ";   
+    }   
+    cout<<endl;
+}
+q++;
+cout<<endl<<endl;
+return true;
+}
+if(i>m||j>n){
+    return false;
+}
+if(maze[i][j]=='X'){
+    return false;
+}
+//therefore we assume that sol exits from current cell
+sol[i][j]=1;
+//recursive case
+//for just path finding we do do not need to call both the function , if right fount the path then do not need to call the down 
+//and if we find not find path right , then need to call down also
+
+bool r=ratinmaze(maze,sol,i,j+1,m,n);
+bool p=ratinmaze(maze,sol,i+1,j,m,n);
+ //backt    racking step
+   sol[i][j]=0;
+ if(r==true||p==true){
+    return true;
+ }
+ return false;
+
+}
+
+int main(){
+
+
+char maze[10][10]={
+            "0000",
+            "00X0",
+            "000X",
+            "0X00",
+};
+
+ll sol[10][10]={0};
+
+if(!ratinmaze(maze,sol,0,0,3,3)){
+cout<<"path does not exits"<<endl;
+}
+else{
+    cout<<"path exits"<<endl;
+cout<<" no of paths "<<q<<endl;
+}
+
+/*
+this sol is proposed by me :-similar to n queen so easier to learn
+
+//sajal agrwaal
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+bool ratinmaze(char maze[][10],ll sol[][10],ll i,ll j,ll m,ll n){
+if((i==m)&&(j==n)){
+sol[i][j]=1;
+    for(ll w=0;w<=m;w++){
+     for(ll x=0;x<=n;x++){
+            cout<<sol[w][x]<<" ";
+        }   cout<<endl;
+    }cout<<endl<<endl;
+return true;
+}
+if(i>m||j>n){
+    return false;
+}
+if(maze[i][j]=='X'){
+    return false;
+}
+sol[i][j]=1;
+bool right=ratinmaze(maze,sol,i,j+1,m,n);
+bool left=ratinmaze(maze,sol,i+1,j,m,n);
+if((right)||(left)==true){
+    return true;
+}
+//otherwise backtrack
+sol[i][j]=0;
+
+return false;
+}
+int main(){
+
+
+char maze[10][10]={
+            "0000",
+            "00X0",
+            "000X",
+            "0X00",
+};
+
+ll sol[10][10]={0};
+
+if(!ratinmaze(maze,sol,0,0,3,3)){
+cout<<"path does not exits"<<endl;
+}
+else{
+    cout<<"path exits"<<endl;
+///cout<<" no of paths "<<q<<endl;
+}
+
+
+
+
+}
+
+
+
+*/
+
+
+}
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-15(rat-in-a-maze)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

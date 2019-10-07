@@ -1,0 +1,79 @@
+<snippet>
+    <content><![CDATA[//searches in sorted rotated array
+/*
+  |
+  |    /     /  
+  |   /     /(b)
+  |  /(a)  /
+  | /     /
+  |/      
+  |
+
+*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+void binarysearch(ll a[],ll n,ll key){
+
+ll l=0,r=n-1;
+ll ans=-1;
+
+
+while(l<=r){
+
+ll mid=(l+r)/2;
+if(a[mid]==key){
+cout<<" found at "<<mid<<" "<<a[mid]<<endl;
+return ;
+}
+if(a[mid]>=a[l]){
+    //left part is sorted, see the graph for more explanation (A)
+    if(a[l]<=key&&key<=a[mid]){
+        r=mid-1;
+    }
+    else{
+        l=mid+1;
+    }
+continue;
+}
+//other wise search the right part
+if(a[mid]<=a[r]){
+    //although above condition is  not necessary
+    if(a[mid]<=key&&key<=a[r]){
+        l=mid+1;
+    }
+    else{
+        r=mid-1;
+    }
+    continue;
+
+}
+
+}
+
+    cout<<"key not found "<<endl;
+return;
+
+}
+int main(){
+ll n;
+cin>>n;ll a[n];
+f(i,0,n){
+    cin>>a[i];
+}
+ll key;
+cin>>key;
+binarysearch(a,n,key);cout<<endl;
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>binary_search(search_in_sorted_array)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

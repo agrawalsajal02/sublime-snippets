@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[/*
+
+//in some question you have to find out whether you haveto input two values or ypu have  to input three values , in that case after the2 vlaue , use scanf fo==, then use if condition that if that scanned character is space then you hav to enter the third value otherwise it is enter and no need to enter the third value
+
+
+
+     v.v. imp
+string input
+
+
+theory:-when take input by cin>> autimatically '\n' is appended in inout buffer and if you uses getline after it then getline see the '\n' as white spaces and then it saves the string with while space 
+causing falult in program
+
+sol:-
+1)use cin.ignore(1,'\n')
+cin.ignore(INT_MAX, '\n'); 
+    it will ignore all the appended '\n' from the input buffer before using getline
+
+2)use cin>>ws
+ it is also a manipulator tell the getline function to skip all the leading (startng) spaces in string
+ 
+ 3)or use another dummy varable befire getline
+           ex:- getline(cin,dummy);   ->this withh take the '\n' input buffer as white space
+                getline(cin,string);   -> this will take original string
+                
+                
+                
+                now why this all problem not happen with cin>>s;
+                because althoush all the data is already loaded in input bufffer it skips all the traling whitespaces , all '\n' , tabs etc until variable is not found
+                cin treat '\n' as delemeter (special charactet) thereefore not treat it and remain as it is in input buffer 
+                
+                
+
+
+
+or use this ://use for input sentnnce of string :-  char s[1005];
+   // scanf(" %[^\n]s",s);]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>concept-3(string_sentence_input)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

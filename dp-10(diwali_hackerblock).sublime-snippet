@@ -1,0 +1,53 @@
+<snippet>
+    <content><![CDATA[        //3 ddp
+        //diwali hackerblock problem (amazingproblem)
+        #include<bits/stdc++.h>
+        using namespace std;
+        #define ll long long int
+        #define mod 1000003
+        ll n,k; 
+        ll dp[105][3][105];
+        ll calc(ll i,ll pre,ll cnt){
+        if(i==n){
+            if(cnt==k){
+                return 1;
+            }
+        return 0;
+        }
+            if(dp[i][pre][cnt]!=-1){
+                return dp[i][pre][cnt];
+            }
+          ll ans=0;
+          if(pre==1){
+            ans=(ans+calc(i+1,1,cnt+1));
+          }
+          else{
+            ans=(ans+calc(i+1,1,cnt));
+          }
+          ans=ans%mod;
+          //when current element is 0
+          ans=(ans+calc(i+1,0,cnt));
+          ans=ans%mod;
+          dp[i][pre][cnt]=ans;
+          return ans;
+        }
+        int main(){
+            ll t;
+            cin>>t;
+            for(ll i=0;i<t;i++){
+        cin>>n>>k;
+        memset(dp,-1,sizeof(dp));
+        cout<<(calc(1,0,0)+calc(1,1,0))%mod<<endl;
+            }
+
+
+
+
+
+        }
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dp-10(diwali_hackerblock)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

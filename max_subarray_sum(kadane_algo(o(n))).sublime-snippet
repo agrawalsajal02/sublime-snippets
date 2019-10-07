@@ -1,0 +1,58 @@
+<snippet>
+    <content><![CDATA[//maximum subarray sum using Kadane algo
+//n tc
+//https://www.youtube.com/watch?v=ohHWQf1HDfU
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll max_subarray_sum(ll a[],ll n){
+///special case check if all are is -ve
+ll ans=a[0];
+for(ll i=0;i<n;i++){
+ans=max(ans,a[i]);
+}
+if(ans<0){
+  return ans;
+}
+
+ans=0;
+ll sum=0;
+ll start =0; ll end = 0; ll s=0; 
+for(ll i=0;i<n;i++){
+    if(sum+a[i]>sum){
+      sum+=a[i];
+       start = s; 
+            end = i; 
+    }
+    else{
+      //(sum+a[i]<sum)
+     s = i + 1; 
+      sum=0;
+    }
+    ans=max(ans,sum);
+}
+cout<<" at index "<<start<<" "<<end<<endl;
+return ans;
+}
+
+int main(){
+   ll t;
+    cin>>t;
+    while(t--){
+ll n;
+cin>>n;ll a[n];
+for(ll j=0;j<n;j++){
+    cin>>a[j];
+}
+cout<<max_subarray_sum(a,n)<<endl;
+    }
+
+}
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>max_subarray_sum(kadane_algo(o(n)))</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

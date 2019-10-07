@@ -1,0 +1,105 @@
+<snippet>
+    <content><![CDATA[//n queen problem
+        //n factoral time complexicity
+//1 sec = 11 cases 
+//three fucnction 1)main(recursive) 2)ischeck 3)print
+#include<bits/stdc++.h>
+using namespace std;
+#define ll int
+ll n;
+void print(char a[][10],ll n){
+    for(ll x=0;x<n;x++){
+     for(ll w=0;w<n;w++){
+         cout<<a[x][w]<<" ";   
+        }
+
+    cout<<endl;
+       
+    }
+    cout<<endl;}
+
+bool ispossible(char a[][10],ll i,ll j,ll n){
+for(ll row=0;row<n;row++){
+    if(a[row][j]=='Q'){
+        return false;
+    }
+}
+ll x=i;
+ll y=j;
+while(x>=0&&y>=0){
+    if(a[x][y]=='Q'){
+        return false;
+    } 
+    x--;
+    y--;
+   
+}
+x=i;
+y=j;
+while(x>=0&&y<n){
+    if(a[x][y]=='Q'){
+        return false;
+    } 
+    x--;
+    y++;
+   
+}
+return true;
+}
+bool nqueen(char a[][10],ll i,ll n){
+//base case
+    //i represent rowws
+    if(i==n){
+        //suzeesful
+        print(a,n);
+        //to print all the valid configuration
+        //write false in base case or just comment the return
+        //there fore it will continue to search for the next valid configuration
+
+        return false;
+    }
+    //recursive case
+for(ll j=0;j<n;j++){
+    //to placing quees in column , j comums
+if(ispossible(a,i,j,n)){
+    //placee the quen at ij
+    a[i][j]='Q';
+    bool nextqueenrakhparehehe=nqueen(a,i+1,n);
+    if(nextqueenrakhparehehe){
+        return true;
+    }
+    //when here means our assumbption is wrong
+    //there we have to backtrack
+    a[i][j]='*';
+}
+
+
+}
+ //we are unable to place queen in a row
+//we have tried all position in current row
+ return false;
+
+
+}
+int main(){
+cout<<" entern the n size"<<endl;
+cin>>n;
+char a[10][10];
+for(ll w=0;w<n;w++){
+ for(ll x=0;x<n;x++){
+     a[w][x]='*';   
+    }   
+}
+nqueen(a,0,n);
+
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-14(nqueen)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

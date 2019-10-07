@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[ll query(ll *tree,ll st,ll se,ll qs,ll qe,ll index){
+
+//if complete overlap return
+  if(qs<=st&&qe>=se){
+    return tree[index]; 
+  }
+  //for no overlap
+  if(se<qs||qe<st){
+    return INT_MAX;
+  }
+
+ll mid=(st+se)/2;
+ll leftans=query(tree,st,mid,qs,qe,2*index+1);
+ll rightans=query(tree,mid+1,se,qs,qe,2*index+2);
+
+return min(rightans,leftans);
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>seg_tree(query)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

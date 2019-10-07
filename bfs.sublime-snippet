@@ -1,0 +1,45 @@
+<snippet>
+    <content><![CDATA[vector<ll>v[100000];
+bool visi[100000];
+ll level[100000];
+ll parent[100000];
+void bfs(ll a){
+//use memset to initiallize
+visi[a]=1;
+queue<ll>q;
+q.push(a);
+level[a]=0;
+parent[a]=-1;
+while(!q.empty()){
+    ll temp=q.front();q.pop();
+   // cout<<" "<<temp<<" ";
+    for(ll i=0;i<v[temp].size();i++){
+        if(visi[v[temp][i]]==0){
+            q.push(v[temp][i]);
+            visi[v[temp][i]]=1;
+            parent[v[temp][i]]=temp;
+            level[v[temp][i]]=level[temp]+1;
+        }
+    }
+}
+/*to find single source shortest path
+void find(ll dest){
+    ll temp=dest;
+    while(temp!=-1){
+        cout<<temp<<" <- ";
+        temp=parent[temp];
+          }
+}*/
+/*
+graph clear 
+for (auto& q : v) {
+   q.clear();
+}
+*/
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>bfs</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

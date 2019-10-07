@@ -1,0 +1,38 @@
+<snippet>
+    <content><![CDATA[//tiling problem
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll calc(ll n){
+    if(n==0){
+        return 1;
+    }
+    if(n==1){
+        return 1;
+    }
+    if(n==2){
+        return 1;
+    }
+    if(n==3){
+        return 1;
+    }
+    if(n==4){
+        return 2;
+    }
+    return (calc(n-1)+calc(n-4));
+}
+int main(){
+ll n;
+cin>>n;
+cout<<calc (n);
+
+
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>id-9(tiling problem)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

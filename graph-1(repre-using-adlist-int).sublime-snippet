@@ -1,0 +1,49 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+class graph{
+  ll V;
+  list<ll>*l;
+public:
+  graph(ll n){
+V=n;
+l=new list<ll>[V];
+}
+void addedge(ll u,ll v,bool bidire=true){
+  l[u].push_back(v);
+  if(bidire){
+  l[v].push_back(u);
+    
+  }
+}
+void prin(){
+  for(ll u=0;u<V;u++){
+    cout<<u<<" -> ";
+    for(auto verti:l[u]){
+  cout<<verti<<" , ";
+    }
+    cout<<endl;
+  }
+}
+
+};
+int main(){
+
+graph g(5);
+g.addedge(0,1);
+g.addedge(0,4);
+g.addedge(4,3);
+g.addedge(1,4);
+g.addedge(1,2);
+g.addedge(2,3);
+g.prin();
+
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>graph-1(repre-using-adlist-int)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

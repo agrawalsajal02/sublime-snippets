@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[vector<ll>v[1000000];
+bool visited[1000000];
+ll in[1000000];
+ll out[1000000];
+ll cnt=0;
+ll level[100000];
+void dfs(ll n,ll par,ll lvl){
+  in[n]=++cnt;
+  level[n]=lvl;
+  for(auto val:v[n]){
+if(val==par){
+  continue;
+}
+            dfs(val,n,lvl+1);
+                    }
+
+
+out[n]=cnt;
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dfs_modified</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,66 @@
+<snippet>
+    <content><![CDATA[//maximum subarray sum using divide and conquer algo
+//nlogn tc
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll max_subarray_sum(ll arr[],ll n){
+if(n==1){
+  return arr[0];
+}
+ll m=n/2;
+ll left_MMS=max_subarray_sum(arr,m);
+ll right_MMS=max_subarray_sum(arr+m,n-m);
+
+ll sum=0;
+ll right=INT_MIN;
+for(ll i=m;i<n;i++){
+sum+=arr[i];
+right=max(right,sum);
+}
+
+sum=0;
+ll left=INT_MIN;
+for(ll i=(m-1);i>=0;i--){
+sum+=arr[i];
+left=max(left,sum);
+}
+
+
+
+ll ans=max(left_MMS,right_MMS);
+
+return max(ans,left+right);
+}
+
+int main(){
+
+
+    ll t;
+    cin>>t;
+    while(t--){
+ll n;
+cin>>n;ll a[n];
+for(ll j=0;j<n;j++){
+    cin>>a[j];
+}
+
+
+cout<<max_subarray_sum(a,n)<<endl;
+
+
+
+
+
+
+
+    }
+
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>max_subarr_sum(using_d_and_c)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[string s = "12345"; 
+  
+    // object from the class stringstream 
+    stringstream geek(s); 
+  
+    // The object has the value 12345 and stream 
+    // it to the integer x 
+    int x = 0; 
+    geek >> x; 
+  ]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+ <tabTrigger>concept-1(string_to_num)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

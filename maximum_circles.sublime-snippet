@@ -1,0 +1,86 @@
+<snippet>
+    <content><![CDATA[/*/-----
+
+
+    Written By:- Sajal Agrawal
+          (Have Patience)
+
+/*/
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+#define rf(i,a,b) for(ll (i)=(a);(i)>=(b);(i)--)
+#define mod 1000000007
+//typedef vector<ll> ii;
+#define fi first
+#define se second
+#define pa pair <ll,ll>
+#define mp make_pair
+#define c(t) cout<<t<<"\n"
+#define pb push_back
+#define ln '\n'
+#define forstl(i,v) for(auto &i: v)
+#define PRI(x) cerr<<#x<<'='<<x<<endl;
+#define clz(a) __builtin_clz(a) // count leading zeroes
+#define ctz(a) __builtin_ctz(a) // count trailing zeroes
+#define popc(a) __builtin_popcount(a) // count set bits (for ints only diff for ll)
+//https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html for other in built
+#define all(con) con.begin(),con.end()
+#define sz(x) ((long long)x.size())
+#define error(args...) { string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
+
+void err(istream_iterator<string> it) {}
+template<typename T, typename... Args>
+
+void err(istream_iterator<string> it, T a, Args... args) {
+    cout << *it << " = " << a << endl;
+    err(++it, args...);
+}
+bool comp(pair<ll,ll>p1,pair<ll,ll>p2){
+return (p1.se<p2.se);
+}
+int main(){
+ll t;
+cin>>t;
+while(t--){
+ll n;
+cin>>n;
+vector< pair <ll,ll> >v;
+ll p=n;
+while(p--){
+ll a,b;
+cin>>a>>b;
+v.pb({a-b,a+b});
+}
+sort(v.begin(),v.end(),comp);
+/*f(i,0,n){
+    cout<<v[i].fi<<" "<<v[i].se<<endl;
+}*/
+ll temp=v[0].se;
+ll cnt=1;
+for(ll i=1;i<n;i++){
+    if(v[i].fi>=temp){
+        temp=v[i].se;
+        cnt++;
+    }
+}
+
+cout<<v.size()-cnt<<endl;
+
+
+
+
+}
+
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>maximum_circles</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

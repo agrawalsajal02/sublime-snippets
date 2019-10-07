@@ -1,0 +1,158 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+void  isprime(ll n){
+    //root n method
+if(n%2==0){
+        cout<<" NOT PRIME"<<endl;
+        return;
+}
+for(ll i=3;i*i<=n;i=i+2){
+  ///checking for only odd, because even number cannot be a prime number
+    if(n%i==0){
+        cout<<" NOT PRIME"<<endl;
+        return;
+    }
+}
+cout<<"PRIME "<<endl;
+}
+
+
+//seive of eratosthenes
+void prime1(){
+    //o nsquare
+    bool prime[1000];
+    memset(prime,1,sizeof(prime));
+//define all numbers prime(1) , ((not prime(0)))
+for(ll i=2;i<1000;i++){
+    if(prime[i]==1){
+        
+    for(ll j=2*i;j<1000;j=j+i){
+            //no need to check for already cancelled
+
+   prime[j]=0;
+   //cancel all multiple of i
+        }
+    }
+}
+for(ll i=0;i<1000;i++){
+    if(prime[i]){
+        cout<<i<<" ";
+    }
+}
+prime[0]=0;
+prime[1]=0;
+
+}
+
+void seive2(){
+//o nlog(logn)
+    bool prime[1000];
+    memset(prime,0,sizeof(prime));
+prime[2]=1;
+prime[1]=0;
+for(ll i=3;i<1000;i++){
+    
+    if(i%2==1){
+        prime[i]=1;
+    }
+}
+//first optimisation , checking only the odd numbers , even numbers already cancelled except two
+for(ll i=3;i<1000;i=i+2){
+    if(prime[i]==1){
+       
+       //second optimisation , statring from i square because numbers before i^2 is already cancelled by diveisors before i if they found multiple , therefore no need to check for them  
+    for(ll j=i*i;j<1000;j=j+2*i){
+        //third optimisation , after i^2 , checking for only odd , since no need to check for een numbers because they are already cancelled as if i^2 is odd and i is odd the i^2+i become even and not need to check , only check for i^2+2*i
+   prime[j]=0;
+        }
+    }
+}
+for(ll i=0;i<1000;i++){
+    if(prime[i]){
+        cout<<i<<" ";
+    }
+}
+prime[0]=0;
+prime[1]=0;
+
+}
+
+
+//segmented seive
+ll prime2[1000000];
+void helper(ll n){
+prime2[2]=1;
+prime2[1]=0;
+prime2[0]=0;
+    memset(prime2,1,sizeof(prime2));
+
+for(ll i=4;i<=n;i=i+2){
+    prime2[i]=0;
+}
+for(ll i=3;i<=n;i=i+2){
+if(prime2[i]){
+for(ll j=i*i;j<=n;j=j+2*i){
+     prime2[i]=0;
+}
+
+}
+}
+}
+void seg_seive(ll a,ll b){
+//seive for1 to root b
+    helper(sqrt(b));
+
+bool sec_arr[b-a+1];
+memset(sec_arr,1,sizeof(sec_arr));
+for(ll i=2;i*i<=b;i++){
+    if(prime2[i]){
+    for(ll j=a;j<=b;j++){
+        if(j==i){
+            continue;
+         //   for overlapping of both array
+        }
+      if(j%i==0){
+        sec_arr[j-a]=0;
+      }
+    }
+}
+}
+ll res=0;
+for(ll x=a;x<=b;x++){
+    res+=sec_arr[x-a];
+    if(sec_arr[x-a]){
+        cout<<x<<" ";
+    }
+}
+cout<<endl;
+cout<<" total no of prime "<<res<<endl;
+
+}
+
+int main(){
+ll n;
+std::cin>>n;
+isprime(n);
+
+//seive of eratostenes
+
+
+//first method
+prime1();
+
+
+//second optimised method
+seive2();
+
+
+//third method :- for segmented seive to find prime in  range
+//can input a and b
+seg_seive(2,10);
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>prime_seive_theory</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

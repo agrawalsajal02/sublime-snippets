@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[//partition dp problem
+// in this problem you have to partition the subset into such thatsum is qual to sum/2
+//dp[sum/2][n] represent that  in n elements is there is subset whose sum is sum/2
+//if yes then it is true
+//if false , the it is nt possible
+//https://ide.geeksforgeeks.org/eC0WIdJm2P
+//refere notes for theory
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define f(i,a,b) for(ll (i)=(a);(i)<(b);(i)++)
+int main(){
+ll t;
+cin>>t;
+while(t--){
+    ll n;
+    cin>>n;
+    ll a[n];
+    ll total=0;
+    f(i,0,n){
+        cin>>a[i];
+        total+=a[i];
+    }
+if(total%2!=0){
+    cout<<"NO"<<endl;
+    continue;
+}
+ll sum=total;
+bool dp[total/2+1][n+1];
+f(i,0,n+1){
+    dp[0][i]=true;
+}
+f(i,1,sum/2+1){
+    dp[i][0]=false;
+}
+
+f(i,1,sum/2+1){
+    f(j,1,n+1){
+        dp[i][j]=dp[i][j-1];
+        //not considering the cuuent element in current subset , means 
+        //we are considering in another subset
+        if(i>=a[j-1]){
+            dp[i][j]=dp[i][j]||dp[i-a[j-1]][j-1];
+   
+   
+        } // cout<<dp[i][j]<<" ";
+    }//cout<<endl;
+}
+
+if(dp[sum/2][n]){
+    cout<<"YES"<<endl;
+
+}
+else{
+    cout<<"NO"<<endl;
+}
+
+}
+/*
+another recursive solution
+bool help(int remain, vector<int> &nums, int idx) {
+        if (remain == 0) {
+            return true;
+        }
+        
+        if (remain < 0) {
+            return false;
+        }
+        
+        for (int i = idx; i < nums.size(); i++) {
+            if (help(remain - nums[idx], nums, i+1)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+*/
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+     <tabTrigger>dp-16(equal_partition_problem)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

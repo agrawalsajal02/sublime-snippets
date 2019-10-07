@@ -1,0 +1,73 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+vector<ll>v[10000];
+vector<pair<ll,ll> >e;
+ll *parent=new ll[10000]; 
+bool visi[100000];
+
+ll findparent(ll *parent,ll i){
+  if(parent[i]==i){
+    return i;
+  }
+  return findparent(parent,parent[i]);
+}
+
+ll Make_Union(ll sor,ll des){
+  ll x_set=findparent(parent,sor);
+  ll y_set=findparent(parent,des);
+  parent[y_set]=x_set;
+}
+ll find_cycle(ll n,ll E){
+//define parent array;
+for(ll i=0;i<n;i++){
+      parent[i]=i; 
+   } 
+for(ll i=0;i<E;i++){
+  ll sour=e[i].first;
+  ll dest=e[i].second;
+  ll source_parent=findparent(parent,sour);
+  ll dest_parent=findparent(parent,dest);
+  if(source_parent==dest_parent){
+    return 1;
+  }
+  Make_Union(sour,dest);
+
+
+}
+return 0;
+}
+int main(){
+
+ll n,E;cin>>n>>E;
+for(ll i=0;i<E;i++){
+ll a,b;cin>>a>>b;
+e.push_back({a,b});
+}
+
+if(find_cycle(n,E)){
+  cout<<"having cycle"<<endl;
+}
+else{
+  cout<<"not having cycle"<<endl;
+}
+
+/*
+5 5
+0 1
+0 2
+1 3
+2 4
+3 4
+
+
+*/
+
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>graph-10(disjoint_set_union)</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

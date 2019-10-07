@@ -1,0 +1,57 @@
+<snippet>
+    <content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+typedef pair<ll,ll>ii;
+class comp{
+public:
+    bool operator()(ii p1,ii p2){
+     ll dis1=p1.first*p1.first + p1.second*p1.second ;
+     ll dis2=p2.first*p2.first + p2.second*p2.second ;
+     return (dis1<dis2);
+    }
+};
+int main(){
+ll q,k;
+cin>>q>>k;
+
+priority_queue< ii ,vector<ii> , comp >p; 
+while(q--){
+ll type,x,y;
+cin>>type;
+if(type==1){
+    cin>>x>>y;
+    if(k!=0){
+  p.push({x,y});
+     k--;
+    }
+    else{
+        ii p1=p.top();
+        ii p2={x,y};
+     ll dis1=p1.first*p1.first + p1.second*p1.second ;
+     ll dis2=p2.first*p2.first + p2.second*p2.second ;
+        if(dis1>dis2){
+        p.pop();
+        p.push({x,y});
+             }
+        }
+    //insert in queue
+}
+else{
+    ii ppp=p.top();
+ll val=ppp.first*ppp.first+ppp.second*ppp.second;
+//cout<<ppp.first<<" "<<ppp.second<<endl;
+  cout<<val<<endl;
+    }
+
+
+
+}
+
+
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>stl(hotel_visit)</tabTrigger> 
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
